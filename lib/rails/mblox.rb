@@ -46,7 +46,6 @@ module Rails
 
         return http_errors if http_response.code != 200
 
-        puts http_response
         sms_response = self.outbound_sms_response(http_response)
 
         if @debug
