@@ -5,11 +5,15 @@ module Rails
       #
       def outbound_sms_request(batch_id, to, message, options = {})
         opts = {
+            :partner_name => @partner_name, # Mblox username (set by constructor)
+            :partner_password => @partner_password, # Mblox password (set by constructor)
+            :username => @username, # Optional username (can be set by constructor)
+            :subscription_name => @subscription_name, # Optional subscription_name (can be set by constructor)
             :version => "3.5", # api version
             :sequence_number => "1", # should be 1 (other value for multi sms on one request, but not stable)
             :message_type => "SMS", # SMS or FlashSMS
             :format => "Unicode", # Text (default)  Binary Unicode Imode
-            :profile => -1, # mblox profile used
+            :profile => (@profile_id || -1), # mblox profile used (can be set by constructor)
             :sender_type => "Numeric", # Numeric Shortcode or Alpha
             :sender_id => nil, # sender value ("from")
             :expire_date => nil, # value between 5 minutes and 12 hours
@@ -20,14 +24,14 @@ module Rails
             :service_id => nil # only used if you are using short codes to send SMS to the USA
         }.merge(options)
 
-        to.gsub!("+", "00") # mblox don't handle '+33...' format
+        to.gsub!("+", "00") # mblox doesn't handle '+33...' format
         builder = Nokogiri::XML::Builder.new do |xml|
           xml.NotificationRequest({ :Version => opts[:version]}) {
             xml.NotificationHeader {
-              xml.PartnerName(@partner_name)
-              xml.PartnerPassword(@partner_password)
-              xml.Username(@username) if @username
-              xml.SubscriptionName(@subscription_name) if @subscription_name
+              xml.PartnerName(opts[:partner_name])
+              xml.PartnerPassword(opts[:partner_password])
+              xml.Username(opts[:username]) if opts[:username]
+              xml.SubscriptionName(opts[:subscription_name]) if opts[:subscription_name]
             }
 
             xml.NotificationList({ :BatchID => batch_id }) {

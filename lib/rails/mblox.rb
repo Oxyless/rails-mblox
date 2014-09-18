@@ -17,6 +17,7 @@ module Rails
           :mblox_send_servers => [ "http://xml9.mblox.com:8180/send", "http://xml10.mblox.com:8180/send" ],
           :username => nil,
           :subscription_name => nil,
+          :profile_id => nil,
           :debug => false
         }.merge(options)
 
@@ -25,6 +26,7 @@ module Rails
 
         @subscription_name = opts[:subscription_name]
         @username = opts[:username]
+        @profile_id = opts[:profile_id]
         @mblox_send_servers = opts[:mblox_send_servers]
         @debug = opts[:debug]
       end
@@ -78,6 +80,10 @@ module Rails
 
       def partner_password
         return @partner_password
+      end
+
+      def profile_id
+        return @profile_id
       end
     end
   end

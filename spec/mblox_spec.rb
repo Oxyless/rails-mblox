@@ -7,7 +7,9 @@ describe Rails::Mblox do
         :mblox_send_servers => [ "http://xml9.mblox.com:8180/send2" ],
         :username => "Login",
         :subscription_name => "SLogin",
-        :debug => true
+        :profile_id => "pid",
+        :debug => true,
+
     })
   end
 
@@ -16,6 +18,8 @@ describe Rails::Mblox do
     @mblox2.username.should == "Login"
     @mblox2.subscription_name.should == "SLogin"
     @mblox2.debug.should == true
+    @mblox2.profile_id.should == "pid"
+
   end
 
   it 'create outbound_sms_request' do
@@ -57,7 +61,11 @@ describe Rails::Mblox do
         :tariff => "South", # only on short codes to send SMS to North America or Latin America
         :tags => { :tag1 => "value" }, # multi-purpose elements used to carry any parameters that are required for a specific mBlox product
         :content_type => "1", # should be -1
-        :service_id => "54321" # only used if you are using short codes to send SMS to the USA
+        :service_id => "54321", # only used if you are using short codes to send SMS to the USA
+        :username => "uname",
+        :partner_name => "pname",
+        :partner_password => "ppass",
+        :subscription_name => "sname"
     })
 
     request.to_s.should ==
@@ -65,8 +73,10 @@ describe Rails::Mblox do
 <?xml version="1.0"?>
 <NotificationRequest Version="3.6">
   <NotificationHeader>
-    <PartnerName>Username</PartnerName>
-    <PartnerPassword>Password</PartnerPassword>
+    <PartnerName>pname</PartnerName>
+    <PartnerPassword>ppass</PartnerPassword>
+    <Username>uname</Username>
+    <SubscriptionName>sname</SubscriptionName>
   </NotificationHeader>
   <NotificationList BatchID="42">
     <Notification SequenceNumber="2" MessageType="FlashSMS" Format="Binary">
@@ -105,7 +115,7 @@ describe Rails::Mblox do
   <NotificationList BatchID="42">
     <Notification SequenceNumber="1" MessageType="SMS" Format="Unicode">
       <Message>Hello world</Message>
-      <Profile>-1</Profile>
+      <Profile>pid</Profile>
       <Subscriber>
         <SubscriberNumber>0033601020304</SubscriberNumber>
       </Subscriber>
