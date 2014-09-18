@@ -130,7 +130,7 @@ describe Rails::Mblox do
     http_response = {"NotificationRequestResult"=>{"NotificationResultHeader"=>{"PartnerName"=>"Wizville", "PartnerRef"=>nil, "RequestResultCode"=>"0", "RequestResultText"=>"OK"}, "NotificationResultList"=>{"NotificationResult"=>{"NotificationResultCode"=>"0", "NotificationResultText"=>"OK", "SubscriberResult"=>{"SubscriberNumber"=>"33641973183", "SubscriberResultCode"=>"0", "SubscriberResultText"=>"OK", "Retry"=>"0", "Operator"=>"0"}, "SequenceNumber"=>"1"}}, "Version"=>"3.5"}}
 
     response = @mblox.outbound_sms_response(http_response)
-    response.to_s.should == "{:mblox=>{:code=>0, :text=>\"OK\"}, :sms=>{:code=>\"0\", :text=>\"OK\"}}"
+    response.to_s.should == "{:mblox=>{:code=>0, :text=>\"OK\"}, :sms=>{:code=>\"0\", :text=>\"OK\"}, :subscriber=>{:number=>\"33641973183\", :code=>\"0\", :result=>\"OK\"}}"
   end
 
 
@@ -139,5 +139,12 @@ describe Rails::Mblox do
 
     response = @mblox.outbound_sms_response(http_response)
     response.to_s.should == "{:mblox=>{:code=>9, :text=>\"Some error\"}}"
+  end
+
+  it 'test' do
+    http_response = {"NotificationRequestResult"=>{"NotificationResultHeader"=>{"PartnerName"=>"Wizville", "PartnerRef"=>nil, "RequestResultCode"=>"0", "RequestResultText"=>"OK"}, "NotificationResultList"=>{"NotificationResult"=>{"NotificationResultCode"=>"0", "NotificationResultText"=>"OK", "SubscriberResult"=>{"SubscriberNumber"=>"0033641973183", "SubscriberResultCode"=>"0", "SubscriberResultText"=>"OK", "Retry"=>"0", "Operator"=>"0"}, "SequenceNumber"=>"1"}}, "Version"=>"3.5"}}
+
+    response = @mblox.outbound_sms_response(http_response)
+    response.to_s.should == "{:mblox=>{:code=>0, :text=>\"OK\"}, :sms=>{:code=>\"0\", :text=>\"OK\"}, :subscriber=>{:number=>\"0033641973183\", :code=>\"0\", :result=>\"OK\"}}"
   end
 end

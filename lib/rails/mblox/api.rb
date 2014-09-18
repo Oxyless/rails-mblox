@@ -85,52 +85,19 @@ module Rails
 
           response[:sms] = { :code => notification_result_code, :text => notification_result_text }
 
-          if notification_result[:SubscriberResult]
-            subscriber_number = notification_result[:SubscriberResult][:SubscriberNumber]
-            subscriber_code = notification_result[:SubscriberResult][:SubscriberResultCode]
-            subscriber_result = notification_result[:SubscriberResult][:SubscriberResultText]
+          if notification_result['SubscriberResult']
+            subscriber_number = notification_result['SubscriberResult']['SubscriberNumber']
+            subscriber_code = notification_result['SubscriberResult']['SubscriberResultCode']
+            subscriber_result = notification_result['SubscriberResult']['SubscriberResultText']
 
-            response[:subscriber] = { :subscriber_number => subscriber_number,
-                                      :subscriber_code => subscriber_code,
-                                      :subscriber_result => subscriber_result }
+            response[:subscriber] = { :number => subscriber_number,
+                                      :code => subscriber_code,
+                                      :result => subscriber_result }
           end
         end
 
         return response
       end
     end
-
-    # Extract notification service response
-    #
-    # def outbound_sms_notification(sms_notification)
-    #   response = {}
-    #
-    #   header = sms_response['NotificationService']['Header']
-    #
-    #   notification_list = sms_response['NotificationService']['Header']
-    # end
-#     <NotificationService Version="2.3">
-#     <Header>
-#     <Partner>AccountName</Partner>
-#     <Password>Password</Password>
-#     <ServiceID>1</ServiceID>
-# </Header>
-#     <NotificationList>
-#     <Notification BatchID="xxxxxxx" SequenceNumber="1">
-#     <Subscriber>
-#     <SubscriberNumber>1xxxxxxxxxx</SubscriberNumber>
-#             <Status>acked</Status>
-#     <TimeStamp>YYYYMMDDHHmm</TimeStamp>
-#             <MsgReference>xxxxxxxxxxxx</MsgReference>
-#     <Reason>3</Reason>
-#         </Subscriber>
-#     </Notification>
-# </NotificationList>
-#     </NotificationService>
-
-
-
-
-
   end
 end
