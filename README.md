@@ -16,13 +16,23 @@ Or install it yourself as:
 
 ## Usage
 
-    MBLOX = Rails::Mblox::Mblox.new("MbloxUsername", "MbloxPassword")
-    MBLOX.send("UniqueId", "33641973183", "Hello world")
+    MBLOX = Rails::Mblox::Mblox.new("MbloxUsername", "MbloxPassword") # 3th parameter is an optional hash mblox_constructor_options
+
+    mblox_constructor_options = {
+      :mblox_send_servers => [ "http://xml9.mblox.com:8180/send", "http://xml10.mblox.com:8180/send" ],
+      :username => nil, # This is optional and an alphanumeric string. This element is setup by mBlox in case you want delivery receipts sent to a specific callback URL that is different from the default one on the account.
+      :subscription_name => nil, # This is optional and an alphanumeric string. This element is currently not used by mBlox. However, you may use it to identify MT messages grouped under a single SubscriptionName. For example, this may be useful when searching XML documents in log files.
+      :debug => false # if true MBLOX.send will return additional http_request, http_response
+    }
+
+
+
+    MBLOX.send("UniqueId", "33641973183", "Hello world") # 4th parameter is an optional hash mblox_send_options
     => {:mblox=>{:code=>0, :text=>"OK"}, :sms=>{:code=>"0", :text=>"OK"}}
 
-    options: {
+    mblox_send_options: {
         :version => "3.5", # api version
-        :sequence_number => "1", # should be 1 (other value for multi sms on one request, but bot stable)
+        :sequence_number => "1", # should be 1 (other value for multi sms on one request, but not stable)
         :message_type => "SMS", # SMS or FlashSMS
         :format => "Unicode", # Text (default)  Binary Unicode Imode
         :profile => -1, # mblox profile used

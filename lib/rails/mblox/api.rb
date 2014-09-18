@@ -6,7 +6,7 @@ module Rails
       def outbound_sms_request(batch_id, to, message, options = {})
         opts = {
             :version => "3.5", # api version
-            :sequence_number => "1", # should be 1 (other value for multi sms on one request, but bot stable)
+            :sequence_number => "1", # should be 1 (other value for multi sms on one request, but not stable)
             :message_type => "SMS", # SMS or FlashSMS
             :format => "Unicode", # Text (default)  Binary Unicode Imode
             :profile => -1, # mblox profile used
