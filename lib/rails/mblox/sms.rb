@@ -72,7 +72,7 @@ module Rails
 
         http_response = self.class.post(@config.outbound_urls.sample, { :body => sms_xml, :headers => {'Content-type' => 'text/xml'} })
 
-        return Rails::Mblox::SmsResponse.parse(http_response)
+        return Rails::Mblox::SmsResponse.from_hash(http_response)
       end
     end
   end

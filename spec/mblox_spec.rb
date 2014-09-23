@@ -101,14 +101,15 @@ describe Rails::Mblox do
   describe 'sms' do
     before(:all) do
       @mblox = Rails::Mblox::Mblox.new do |config|
-        config.partner_name = MBLOX_CONFIG[:partner_name]
-        config.partner_password = MBLOX_CONFIG[:partner_password]
-        config.profile_id = MBLOX_CONFIG[:profile_id]
+        config.partner_name = MBLOX_CONFIG[:partner_name] rescue 'p_name'
+        config.partner_password = MBLOX_CONFIG[:partner_password] rescue 'p_pass'
+        config.profile_id = MBLOX_CONFIG[:profile_id] rescue 'profile'
+        config.username = MBLOX_CONFIG[:username] rescue 'username'
       end
     end
 
     it 'creates a sms' do
-      sms = Rails::Mblox::Sms.new(1, MBLOX_CONFIG[:phone_number], "Hello world", @mblox.config)
+      sms = Rails::Mblox::Sms.new(1, (MBLOX_CONFIG[:phone_number] rescue '+33641973183'), "Hello world", @mblox.config)
 
       sms_xml = sms.to_xml
       sms_xml.should ==
@@ -118,6 +119,7 @@ describe Rails::Mblox do
   <NotificationHeader>
     <PartnerName>#{sms.config.partner_name}</PartnerName>
     <PartnerPassword>#{sms.config.partner_password}</PartnerPassword>
+    <Username>#{sms.config.username}</Username>
   </NotificationHeader>
   <NotificationList BatchID="#{sms.batch_id}">
     <Notification SequenceNumber="1" MessageType="SMS" Format="Unicode">
@@ -133,27 +135,29 @@ describe Rails::Mblox do
 eos
     end
 
-    it 'sends a sms' do
-      sms = Rails::Mblox::Sms.new(1, MBLOX_CONFIG[:phone_number], "Hello world") do |config|
-        config.partner_name = MBLOX_CONFIG[:partner_name]
-        config.partner_password = MBLOX_CONFIG[:partner_password]
-        config.profile_id = MBLOX_CONFIG[:profile_id]
-      end
-      code, message = sms.send
+    if defined? MBLOX_CONFIG
+      it 'sends a sms' do
+        sms = Rails::Mblox::Sms.new(1, MBLOX_CONFIG[:phone_number], "Hello world") do |config|
+          config.partner_name = MBLOX_CONFIG[:partner_name]
+          config.partner_password = MBLOX_CONFIG[:partner_password]
+          config.profile_id = MBLOX_CONFIG[:profile_id]
+        end
+        code, message = sms.send
 
-      message.should == "Ok"
-      code.should == 0
-    end
-
-    it 'sends a sms with wrong password' do
-      sms = Rails::Mblox::Sms.new(1, MBLOX_CONFIG[:phone_number], "Hello world") do |config|
-        config.partner_password == "iamaclown"
+        message.should == "Ok"
+        code.should == 0
       end
 
-      code, message = sms.send
+      it 'sends a sms with wrong password' do
+        sms = Rails::Mblox::Sms.new(1, MBLOX_CONFIG[:phone_number], "Hello world") do |config|
+          config.partner_password == "iamaclown"
+        end
 
-      message.should == "Wrong password"
-      code.should == 3
+        code, message = sms.send
+
+        message.should == "Wrong password"
+        code.should == 3
+      end
     end
   end
 end

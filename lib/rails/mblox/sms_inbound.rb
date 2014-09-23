@@ -3,15 +3,12 @@ require 'nokogiri'
 module Rails
   module Mblox
     class SmsInbound
-      def self.parse(response)
-        result = response["ResponseService"]
-        header = result["Header"]
+      def self.from_xml(response_as_xml)
+        response_as_xml = response_as_xml.gsub('XMLDATA=', '')
+        doc = Nokogiri::XML(response_as_xml)
 
-        response_list = result["ResponseList"]
-        response = response_list["Response"]
-
-        originating_number = response["OriginatingNumber"]
-        data = response["Data"]
+        originating_number = doc.xpath("//OriginatingNumber").text
+        data = doc.xpath("//Data").text
 
         return originating_number, data
       end

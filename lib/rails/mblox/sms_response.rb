@@ -3,8 +3,8 @@ require 'nokogiri'
 module Rails
   module Mblox
     class SmsResponse
-      def self.parse(response)
-        result = response["NotificationRequestResult"]
+      def self.from_hash(response_as_hash)
+        result = response_as_hash["NotificationRequestResult"]
         header = result["NotificationResultHeader"]
 
         header_result_code = header["RequestResultCode"].to_i
