@@ -60,7 +60,7 @@ module Rails
       end
 
       def format
-        @format || "Unicode"
+        @format || "UTF8"
       end
 
       def profile

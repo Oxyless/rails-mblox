@@ -37,7 +37,9 @@ module Rails
 
             xml.NotificationList({ :BatchID => @batch_id }) {
               xml.Notification({ :SequenceNumber => @config.sequence_number, :MessageType => @config.message_type, :Format => @config.format }) {
-                xml.Message(@message)
+                xml.Message {
+                  xml.cdata(@message)
+                }
                 xml.Profile(@config.profile_id) if @config.profile_id
                 xml.Udh("Udh") if @config.format == "Binary"
                 xml.SenderID("", { :Type => @config.sender_type }) if @config.sender_id

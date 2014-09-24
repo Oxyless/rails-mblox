@@ -8,7 +8,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.outbound_urls.should == [ "http://xml9.mblox.com:8180/send", "http://xml10.mblox.com:8180/send" ]
       Rails::Mblox.config.sequence_number.should == "1"
       Rails::Mblox.config.message_type.should == "SMS"
-      Rails::Mblox.config.format.should == "Unicode"
+      Rails::Mblox.config.format.should == "UTF8"
       Rails::Mblox.config.message_type.should == "SMS"
       Rails::Mblox.config.profile.should == "-1"
       Rails::Mblox.config.sender_type.should == "Numeric"
@@ -122,8 +122,8 @@ describe Rails::Mblox do
     <Username>#{sms.config.username}</Username>
   </NotificationHeader>
   <NotificationList BatchID="#{sms.batch_id}">
-    <Notification SequenceNumber="1" MessageType="SMS" Format="Unicode">
-      <Message>#{sms.message}</Message>
+    <Notification SequenceNumber="1" MessageType="SMS" Format="UTF8">
+      <Message><![CDATA[#{sms.message}]]></Message>
       <Profile>#{sms.config.profile_id}</Profile>
       <Subscriber>
         <SubscriberNumber>#{sms.phone}</SubscriberNumber>
