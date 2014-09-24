@@ -16,42 +16,17 @@ Or install it yourself as:
 
 ## Usage
 
-Constructor:
+    Rails::Mblox.configure do |config|
+        config.partner_name = "partner_name"
+        config.partner_password = "partner_password"
+        config.profile_id = "12345"
+    end
 
-    MBLOX = Rails::Mblox::Mblox.new("MbloxUsername", "MbloxPassword") # 3th parameter is an optional hash mblox_constructor_options
+    mblox_sms = Rails::Mblox::Sms.new(42, "+33641973183", "Hello world")
+    code, message = mblox_sms.send
 
-    mblox_constructor_options = {
-      :mblox_send_servers => [ "http://xml9.mblox.com:8180/send", "http://xml10.mblox.com:8180/send" ],
-      :username => nil, # This is optional and an alphanumeric string. This element is setup by mBlox in case you want delivery receipts sent to a specific callback URL that is different from the default one on the account.
-      :subscription_name => nil, # This is optional and an alphanumeric string. This element is currently not used by mBlox. However, you may use it to identify MT messages grouped under a single SubscriptionName. For example, this may be useful when searching XML documents in log files.
-      :profile_id => nil, # Default id profile used on MBLOX.send
-      :debug => false # if true MBLOX.send will return additional http_request, http_response
-    }
-
-Send a SMS via MBlox:
-
-    MBLOX.send("UniqueId", "33641973183", "Hello world") # 4th parameter is an optional hash mblox_send_options
-    => {:mblox=>{:code=>0, :text=>"OK"}, :sms=>{:code=>"0", :text=>"OK"}}
-
-    mblox_send_options: {
-        :partner_name => @partner_name, # Mblox username (set by constructor)
-        :partner_password => @partner_password, # Mblox password (set by constructor)
-        :username => @username, # Optional username (can be set by constructor)
-        :subscription_name => @subscription_name, # Optional subscription_name (can be set by constructor)
-        :version => "3.5", # api version
-        :sequence_number => "1", # should be 1 (other value for multi sms on one request, but not stable)
-        :message_type => "SMS", # SMS or FlashSMS
-        :format => "Unicode", # Text (default)  Binary Unicode Imode
-        :profile => -1, # mblox profile used
-        :sender_type => "Numeric", # Numeric Shortcode or Alpha
-        :sender_id => nil, # sender value ("from")
-        :expire_date => nil, # value between 5 minutes and 12 hours
-        :operator => nil, # only on short codes to send SMS to North America or Latin America
-        :tariff => nil, # only on short codes to send SMS to North America or Latin America
-        :tags => {}, # multi-purpose elements used to carry any parameters that are required for a specific mBlox product
-        :content_type => "-1", # should be -1
-        :service_id => nil # only used if you are using short codes to send SMS to the USA
-    }
+    originating_number, data = Rails::Mblox::SmsInbound.from_xml(xml_request)
+    batch_id, subscriber_number, subscriber_status = Rails::Mblox::SmsReceipt.from_xml(xml_request)
 
 ## Contributing
 
