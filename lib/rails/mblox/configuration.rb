@@ -60,7 +60,7 @@ module Rails
       end
 
       def format
-        @format || "Unicode"
+        @format || "Text"
       end
 
       def profile_id

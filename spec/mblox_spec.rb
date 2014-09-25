@@ -8,7 +8,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.outbound_urls.should == [ "http://xml9.mblox.com:8180/send", "http://xml10.mblox.com:8180/send" ]
       Rails::Mblox.config.sequence_number.should == "1"
       Rails::Mblox.config.message_type.should == "SMS"
-      Rails::Mblox.config.format.should == "Unicode"
+      Rails::Mblox.config.format.should == "Text"
       Rails::Mblox.config.message_type.should == "SMS"
       Rails::Mblox.config.profile_id.should == "-1"
       Rails::Mblox.config.sender_type.should == "Numeric"
@@ -106,7 +106,7 @@ describe Rails::Mblox do
         config.profile_id = MBLOX_CONFIG[:profile_id] rescue 'profile'
         config.username = MBLOX_CONFIG[:username] rescue 'username'
 
-        config.format = "Unicode"
+        config.format = "Text"
         config.sender_id = "sender_id"
         config.sender_type = "Alpha"
       end
@@ -126,7 +126,7 @@ describe Rails::Mblox do
     <Username>#{sms.config.username}</Username>
   </NotificationHeader>
   <NotificationList BatchID="#{sms.batch_id}">
-    <Notification SequenceNumber="1" MessageType="SMS" Format="Unicode">
+    <Notification SequenceNumber="1" MessageType="SMS" Format="Text">
       <Message><![CDATA[#{"Hello world igação".encode('iso-8859-1')}]]></Message>
       <Profile>#{sms.config.profile_id}</Profile>
       <SenderID Type="Alpha">sender_id</SenderID>
