@@ -16,6 +16,8 @@ Or install it yourself as:
 
 ## Usage
 
+Example:
+
     Rails::Mblox.configure do |config|
         config.partner_name = "partner_name"
         config.partner_password = "partner_password"
@@ -27,6 +29,14 @@ Or install it yourself as:
 
     originating_number, data = Rails::Mblox::SmsInbound.from_xml(xml_request)
     batch_id, subscriber_number, subscriber_status = Rails::Mblox::SmsReceipt.from_xml(xml_request)
+
+List of characteres supported with default format (Text - max 160):
+
+    ñ ò ö ø ù ü á ä å æ è é ì Ñ Ö Ø Ü ß Ä Å Æ Ç É ¿ i £ ¤ ¥ §
+    p q r s t u v w x y z a b c d e f g h i j k l m n o
+    P Q R S T U V W X Y Z @ A B C D E F G H I J K L M N O
+    0 1 2 3 4 5 6 7 8 9 : ; < = > ?
+    SP ! " # $ % & ' ( ) * + , - . / LF CR
 
 ## Contributing
 
