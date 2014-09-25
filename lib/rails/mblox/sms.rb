@@ -26,6 +26,9 @@ module Rails
       end
 
       def to_xml
+        notification = { :SequenceNumber => @config.sequence_number, :MessageType => @config.message_type }
+        notification[:Format] = @config.format if @config.format
+
         builder = Nokogiri::XML::Builder.new({ :encoding => "ISO-8859-1" }) do |xml|
           xml.NotificationRequest({ :Version => @config.version}) {
             xml.NotificationHeader {
@@ -36,7 +39,7 @@ module Rails
             }
 
             xml.NotificationList({ :BatchID => @batch_id }) {
-              xml.Notification({ :SequenceNumber => @config.sequence_number, :MessageType => @config.message_type, :Format => @config.format }) {
+              xml.Notification(notification) {
                 xml.Message {
                   xml.cdata(@message)
                 }

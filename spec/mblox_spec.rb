@@ -8,7 +8,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.outbound_urls.should == [ "http://xml9.mblox.com:8180/send", "http://xml10.mblox.com:8180/send" ]
       Rails::Mblox.config.sequence_number.should == "1"
       Rails::Mblox.config.message_type.should == "SMS"
-      Rails::Mblox.config.format.should == "Text"
+      Rails::Mblox.config.format.should == nil
       Rails::Mblox.config.message_type.should == "SMS"
       Rails::Mblox.config.profile_id.should == "-1"
       Rails::Mblox.config.sender_type.should == "Numeric"
@@ -25,7 +25,7 @@ describe Rails::Mblox do
         config.subscription_name = "subscription_name"
         config.sequence_number = "2"
         config.message_type = "FlashSMS"
-        config.format = "Text"
+        config.format = nil
         config.profile_id = "12345"
         config.sender_type = "Numeric"
         config.sender_id = "+33641973183"
@@ -43,7 +43,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.partner_password.should == "partner_password"
       Rails::Mblox.config.sequence_number.should == "2"
       Rails::Mblox.config.message_type.should == "FlashSMS"
-      Rails::Mblox.config.format.should == "Text"
+      Rails::Mblox.config.format.should == nil
       Rails::Mblox.config.profile_id.should == "12345"
       Rails::Mblox.config.sender_type.should == "Numeric"
       Rails::Mblox.config.sender_id.should == "+33641973183"
@@ -106,7 +106,6 @@ describe Rails::Mblox do
         config.profile_id = MBLOX_CONFIG[:profile_id] rescue 'profile'
         config.username = MBLOX_CONFIG[:username] rescue 'username'
 
-        config.format = "Text"
         config.sender_id = "sender_id"
         config.sender_type = "Alpha"
       end
@@ -126,7 +125,7 @@ describe Rails::Mblox do
     <Username>#{sms.config.username}</Username>
   </NotificationHeader>
   <NotificationList BatchID="#{sms.batch_id}">
-    <Notification SequenceNumber="1" MessageType="SMS" Format="Text">
+    <Notification SequenceNumber="1" MessageType="SMS">
       <Message><![CDATA[#{"Hello world igação".encode('iso-8859-1')}]]></Message>
       <Profile>#{sms.config.profile_id}</Profile>
       <SenderID Type="Alpha">sender_id</SenderID>

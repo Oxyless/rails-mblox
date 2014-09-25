@@ -59,10 +59,6 @@ module Rails
         @message_type || "SMS"
       end
 
-      def format
-        @format || "Text"
-      end
-
       def profile_id
         @profile_id || "-1"
       end
