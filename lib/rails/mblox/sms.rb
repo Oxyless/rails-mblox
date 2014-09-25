@@ -26,7 +26,7 @@ module Rails
       end
 
       def to_xml
-        builder = Nokogiri::XML::Builder.new do |xml|
+        builder = Nokogiri::XML::Builder.new({ :encoding => "ISO-8859-1" }) do |xml|
           xml.NotificationRequest({ :Version => @config.version}) {
             xml.NotificationHeader {
               xml.PartnerName(@config.partner_name)
@@ -42,7 +42,7 @@ module Rails
                 }
                 xml.Profile(@config.profile_id) if @config.profile_id
                 xml.Udh("Udh") if @config.format == "Binary"
-                xml.SenderID("", { :Type => @config.sender_type }) if @config.sender_id
+                xml.SenderID(@config.sender_id, { :Type => @config.sender_type }) if @config.sender_id
                 xml.ExpireDate(@config.expire_date) if @config.expire_date
                 xml.Operator(@config.operator) if @config.operator
                 xml.Operator(@config.tariff) if @config.tariff

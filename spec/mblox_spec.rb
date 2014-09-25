@@ -8,9 +8,9 @@ describe Rails::Mblox do
       Rails::Mblox.config.outbound_urls.should == [ "http://xml9.mblox.com:8180/send", "http://xml10.mblox.com:8180/send" ]
       Rails::Mblox.config.sequence_number.should == "1"
       Rails::Mblox.config.message_type.should == "SMS"
-      Rails::Mblox.config.format.should == "UTF8"
+      Rails::Mblox.config.format.should == "Unicode"
       Rails::Mblox.config.message_type.should == "SMS"
-      Rails::Mblox.config.profile.should == "-1"
+      Rails::Mblox.config.profile_id.should == "-1"
       Rails::Mblox.config.sender_type.should == "Numeric"
       Rails::Mblox.config.content_type.should == "-1"
     end
@@ -105,16 +105,20 @@ describe Rails::Mblox do
         config.partner_password = MBLOX_CONFIG[:partner_password] rescue 'p_pass'
         config.profile_id = MBLOX_CONFIG[:profile_id] rescue 'profile'
         config.username = MBLOX_CONFIG[:username] rescue 'username'
+
+        config.format = "Unicode"
+        config.sender_id = "sender_id"
+        config.sender_type = "Alpha"
       end
     end
 
     it 'creates a sms' do
-      sms = Rails::Mblox::Sms.new(1, (MBLOX_CONFIG[:phone_number] rescue '+33641973183'), "Hello world", @mblox.config)
+      sms = Rails::Mblox::Sms.new(1, (MBLOX_CONFIG[:phone_number] rescue '+33641973183'), "Hello world igação", @mblox.config)
 
       sms_xml = sms.to_xml
       sms_xml.should ==
           <<-eos
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <NotificationRequest Version="3.5">
   <NotificationHeader>
     <PartnerName>#{sms.config.partner_name}</PartnerName>
@@ -122,9 +126,10 @@ describe Rails::Mblox do
     <Username>#{sms.config.username}</Username>
   </NotificationHeader>
   <NotificationList BatchID="#{sms.batch_id}">
-    <Notification SequenceNumber="1" MessageType="SMS" Format="UTF8">
-      <Message><![CDATA[#{sms.message}]]></Message>
+    <Notification SequenceNumber="1" MessageType="SMS" Format="Unicode">
+      <Message><![CDATA[#{"Hello world igação".encode('iso-8859-1')}]]></Message>
       <Profile>#{sms.config.profile_id}</Profile>
+      <SenderID Type="Alpha">sender_id</SenderID>
       <Subscriber>
         <SubscriberNumber>#{sms.phone}</SubscriberNumber>
       </Subscriber>

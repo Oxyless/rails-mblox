@@ -60,15 +60,15 @@ module Rails
       end
 
       def format
-        @format || "UTF8"
+        @format || "Unicode"
       end
 
-      def profile
-        @profile || "-1"
+      def profile_id
+        @profile_id || "-1"
       end
 
       def sender_type
-        @profile || "Numeric"
+        @sender_type || "Numeric"
       end
 
       def content_type
