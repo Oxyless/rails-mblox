@@ -4,7 +4,7 @@ module Rails
   module Mblox
     class SmsReceipt
       def self.from_xml(response_as_xml)
-        response_as_xml = response_as_xml.gsub('XMLDATA=', '')
+        response_as_xml = URI.decode(response_as_xml).gsub('XMLDATA=', '').gsub('+', ' ')
         doc = Nokogiri::XML(response_as_xml)
 
         subscriber_status = doc.xpath("//Status").text
