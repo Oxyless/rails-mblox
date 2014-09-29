@@ -25,10 +25,11 @@ describe Rails::Mblox::SmsReceipt do
 </NotificationService>
     eos
 
-    batch_id, subscriber_number, subscriber_status = Rails::Mblox::SmsReceipt.from_xml(datas)
+    batch_id, subscriber_number, subscriber_status, msg_reference = Rails::Mblox::SmsReceipt.from_xml(datas)
     batch_id.should == "42"
     subscriber_status.should == "acked"
     subscriber_number.should == "0102030405"
+    msg_reference.should == "xxxxxxxxxxxx"
   end
 
   it 'parse real receipt datas' do
@@ -55,10 +56,11 @@ describe Rails::Mblox::SmsReceipt do
   </NotificationService>
     eos
 
-    batch_id, subscriber_number, subscriber_status = Rails::Mblox::SmsReceipt.from_xml(datas)
+    batch_id, subscriber_number, subscriber_status, msg_reference = Rails::Mblox::SmsReceipt.from_xml(datas)
     batch_id.should == "6"
     subscriber_status.should == "Delivered"
     subscriber_number.should == "33641973183"
+    msg_reference.should == "20991272511411481597322"
   end
 
 end

@@ -10,8 +10,9 @@ module Rails
         subscriber_status = doc.xpath("//Status").text
         batch_id = doc.xpath("//Notification/@BatchID").text
         subscriber_number = doc.xpath("//SubscriberNumber").text
+        msg_reference = doc.xpath("//MsgReference").text
 
-        return batch_id, subscriber_number, subscriber_status
+        return batch_id, subscriber_number, subscriber_status, msg_reference
       end
     end
   end

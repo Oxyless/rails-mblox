@@ -9,8 +9,9 @@ module Rails
 
         originating_number = doc.xpath("//OriginatingNumber").text
         data = doc.xpath("//Data").text
+        msg_reference = doc.xpath("//MsgReference").text
 
-        return originating_number, data
+        return originating_number, data, msg_reference
       end
     end
   end
