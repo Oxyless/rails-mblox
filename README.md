@@ -27,8 +27,8 @@ Example:
     mblox_sms = Rails::Mblox::Sms.new(42, "+33641973183", "Hello world")
     code, message = mblox_sms.send
 
-    originating_number, data = Rails::Mblox::SmsInbound.from_xml(xml_request)
-    batch_id, subscriber_number, subscriber_status = Rails::Mblox::SmsReceipt.from_xml(xml_request)
+    originating_number, data, msg_reference = Rails::Mblox::SmsInbound.from_xml(xml_request)
+    batch_id, subscriber_number, subscriber_status, msg_reference = Rails::Mblox::SmsReceipt.from_xml(xml_request)
 
 List of characteres supported with default format (Text - max 160):
 
