@@ -34,12 +34,24 @@ module Rails
                       :operator,
                       :tariff,
                       :tags,
+                      :reference_number,
                       :content_type,
-                      :service_id
+                      :service_id,
+                      :multipart_enabled
 
       attr_writer     :outbound_url
 
-      def version
+      def multipart_enabled?
+        @multipart_enabled || true
+      end
+
+      def reference_number
+        @reference_number ||= SecureRandom.hex(1)
+
+        return @reference_number
+      end
+
+          def version
         @version || "3.5"
       end
 

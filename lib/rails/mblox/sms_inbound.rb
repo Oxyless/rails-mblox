@@ -32,3 +32,17 @@ module Rails
     end
   end
 end
+
+
+
+def binary_to_utf_8(data)
+  two_bytes_group = data.gsub(' ', '').scan(/.{4}/)
+  result = ""
+
+  two_bytes_group.each do |group|
+    result << group.hex.to_i.chr(Encoding::UTF_16)
+  end
+
+  res = Iconv.iconv('utf-8', 'utf-16', result)
+  res
+end

@@ -13,6 +13,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.profile_id.should == "-1"
       Rails::Mblox.config.sender_type.should == "Numeric"
       Rails::Mblox.config.content_type.should == "-1"
+      Rails::Mblox.config.reference_number.size.should == 2
     end
 
     it 'configure Mblox class' do
@@ -25,6 +26,7 @@ describe Rails::Mblox do
         config.subscription_name = "subscription_name"
         config.sequence_number = "2"
         config.message_type = "FlashSMS"
+        config.reference_number = "ff"
         config.format = nil
         config.profile_id = "12345"
         config.sender_type = "Numeric"
@@ -50,6 +52,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.expire_date.should == "00000005"
       Rails::Mblox.config.operator.should == "operator"
       Rails::Mblox.config.tariff.should == "0"
+      Rails::Mblox.config.reference_number.should == "ff"
       Rails::Mblox.config.content_type.should == "-1"
       Rails::Mblox.config.service_id.should == "service_id"
 
@@ -105,7 +108,7 @@ describe Rails::Mblox do
         config.partner_password = MBLOX_CONFIG[:partner_password] rescue 'p_pass'
         config.profile_id = MBLOX_CONFIG[:profile_id] rescue 'profile'
         config.username = MBLOX_CONFIG[:username] rescue 'username'
-
+        config.reference_number = "ab"
         config.sender_id = "sender_id"
         config.sender_type = "Alpha"
       end
@@ -137,6 +140,61 @@ describe Rails::Mblox do
   </NotificationList>
 </NotificationRequest>
 eos
+    end
+
+    it 'creates a sms multi part' do
+      sms = Rails::Mblox::Sms.new(1, (MBLOX_CONFIG[:phone_number] rescue '+33641973183'), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies risus iaculis gravida tempor. Sed pharetra, lacus et pulvinar facilisis, lacus metus second message", @mblox.config)
+
+      sms_xml = sms.to_xml
+      sms_xml.size.should == 2
+
+      sms_xml[0].should ==
+          <<-eos
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<NotificationRequest Version="3.5">
+  <NotificationHeader>
+    <PartnerName>p_name</PartnerName>
+    <PartnerPassword>p_pass</PartnerPassword>
+    <Username>username</Username>
+  </NotificationHeader>
+  <NotificationList BatchID="1">
+    <Notification SequenceNumber="1" MessageType="SMS">
+      <Message><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ultricies risus iaculis gravida tempor. Sed pharetra, lacus et pulvinar facilisis, lacus]]></Message>
+      <Profile>profile</Profile>
+      <Udh>:05:00:03:ab:02:01</Udh>
+      <SenderID Type="Alpha">sender_id</SenderID>
+      <Subscriber>
+        <SubscriberNumber>0033641973183</SubscriberNumber>
+      </Subscriber>
+      <ContentType>-1</ContentType>
+    </Notification>
+  </NotificationList>
+</NotificationRequest>
+eos
+
+      sms_xml[1].should ==
+          <<-eos
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<NotificationRequest Version="3.5">
+  <NotificationHeader>
+    <PartnerName>p_name</PartnerName>
+    <PartnerPassword>p_pass</PartnerPassword>
+    <Username>username</Username>
+  </NotificationHeader>
+  <NotificationList BatchID="1">
+    <Notification SequenceNumber="1" MessageType="SMS">
+      <Message><![CDATA[ metus second message]]></Message>
+      <Profile>profile</Profile>
+      <Udh>:05:00:03:ab:02:02</Udh>
+      <SenderID Type="Alpha">sender_id</SenderID>
+      <Subscriber>
+        <SubscriberNumber>0033641973183</SubscriberNumber>
+      </Subscriber>
+      <ContentType>-1</ContentType>
+    </Notification>
+  </NotificationList>
+</NotificationRequest>
+      eos
     end
 
     if defined? MBLOX_CONFIG
