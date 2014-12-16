@@ -42,7 +42,7 @@ module Rails
       attr_writer     :outbound_url
 
       def multipart_enabled?
-        @multipart_enabled || true
+        return !(@multipart_enabled == false)
       end
 
       def reference_number

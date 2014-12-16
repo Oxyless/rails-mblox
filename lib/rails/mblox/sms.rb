@@ -70,6 +70,8 @@ module Rails
         xml_requests = []
 
         if self.multiparts?
+          raise ArgumentError, "#{@message} too long and multipart disabled" unless @config.multipart_enabled?
+
           messages = @message.scan(/.{1,#{self.chunck_size}}/)
         end
 
@@ -132,8 +134,6 @@ module Rails
           when String
             return  Rails::Mblox::SmsResponse.from_hash(self.class.post(outbound_server, { :body => sms_xml, :headers => {'Content-type' => 'text/xml'} }))
           when Array
-            raise ArgumentError, "#{@message} too long" unless @multipart_enabled
-
             code = log = nil
 
             sms_xml.each do |xml|

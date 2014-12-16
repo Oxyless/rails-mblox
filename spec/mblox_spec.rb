@@ -14,6 +14,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.sender_type.should == "Numeric"
       Rails::Mblox.config.content_type.should == "-1"
       Rails::Mblox.config.reference_number.size.should == 2
+      Rails::Mblox.config.multipart_enabled?.should == true
     end
 
     it 'configure Mblox class' do
@@ -33,6 +34,7 @@ describe Rails::Mblox do
         config.sender_id = "+33641973183"
         config.expire_date = "00000005"
         config.operator = "operator"
+        config.multipart_enabled = false
         config.tariff = "0"
         config.tags = { :tag_name => :tag_value }
         config.content_type = "-1"
@@ -55,6 +57,7 @@ describe Rails::Mblox do
       Rails::Mblox.config.reference_number.should == "ff"
       Rails::Mblox.config.content_type.should == "-1"
       Rails::Mblox.config.service_id.should == "service_id"
+      Rails::Mblox.config.multipart_enabled?.should == false
 
       Rails::Mblox.reset_config
     end
