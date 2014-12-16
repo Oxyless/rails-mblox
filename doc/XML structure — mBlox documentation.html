@@ -1,0 +1,1203 @@
+
+<!-- saved from url=(0149)http://webcache.googleusercontent.com/search?q=cache:http://109.74.11.69/developers/docs/sms/sms_xml_structure.html&gws_rd=cr&ei=ahqQVIC9L8vnarjngqAD -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--<base href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html">--><base href="."><style type="text/css"></style><script type="text/javascript" async="" src="./XML structure — mBlox documentation_files/ga.js"></script><script type="text/javascript" async="" src="./XML structure — mBlox documentation_files/embed.js"></script></head><body><div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;"><div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">Ceci est le cache Google de <a href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html" style="text-decoration:underline;color:#00c">http://109.74.11.69/developers/docs/sms/sms_xml_structure.html</a>. Il s'agit d'un instantané de la page telle qu'elle était affichée le 2 déc. 2014 13:05:19 GMT. La <a href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html" style="text-decoration:underline;color:#00c">page actuelle</a> peut avoir changé depuis cette date. <a href="http://support.google.com/websearch/bin/answer.py?hl=fr&p=cached&answer=1687222" style="text-decoration:underline;color:#00c">En savoir plus</a><br>Astuce&nbsp;: Pour trouver rapidement votre terme de recherche sur cette page, appuyez sur <b>Ctrl+F</b> ou sur <b>⌘+F</b> (Mac), puis utilisez la barre de recherche.<br><br><div style="float:right"><a href="http://webcache.googleusercontent.com/search?q=cache:http://109.74.11.69/developers/docs/sms/sms_xml_structure.html&strip=1" style="text-decoration:underline;color:#00c">Version en texte seul</a></div>
+<div>&nbsp;</div></div></div><div style="position:relative">
+
+
+
+
+
+
+  
+    
+    
+    <title>XML structure — mBlox  documentation</title>
+    
+    <link rel="stylesheet" href="./XML structure — mBlox documentation_files/basic.css" type="text/css">
+    <link rel="stylesheet" href="./XML structure — mBlox documentation_files/pygments.css" type="text/css">
+    
+    <script type="text/javascript" async="" src="./XML structure — mBlox documentation_files/ga.js"></script><script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="./XML structure — mBlox documentation_files/jquery.js"></script>
+    <script type="text/javascript" src="./XML structure — mBlox documentation_files/underscore.js"></script>
+    <script type="text/javascript" src="./XML structure — mBlox documentation_files/doctools.js"></script>
+    <link rel="top" title="mBlox  documentation" href="http://109.74.11.69/developers/index.html">
+    <link rel="up" title="XML Interface" href="http://109.74.11.69/developers/docs/sms/sms_xml_overview.html">
+    <link rel="next" title="Connection management" href="http://109.74.11.69/developers/docs/sms/sms_xml_connection.html">
+    <link rel="prev" title="Account information" href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html">
+ 
+	<style type="text/css">
+	  table.right { float: right; margin-left: 20px; }
+	  table.right td { border: 1px solid #ccc; }
+	</style> 
+	<link href="./XML structure — mBlox documentation_files/css" rel="stylesheet" type="text/css">
+	<link href="./XML structure — mBlox documentation_files/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="./XML structure — mBlox documentation_files/mbloxdocs.css" rel="stylesheet" type="text/css">
+	<link href="./XML structure — mBlox documentation_files/codeinspector.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23435615-1']);
+	  _gaq.push(['_setDomainName', 'mblox.com']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+  
+  
+<div id="navbar" class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="logo pull-left" href="http://109.74.11.69/" title="Home">
+				<img src="./XML structure — mBlox documentation_files/mobile_engagement_reinvented.png" alt="Home">
+			</a>
+      
+			<div class="nav-collapse">
+				<nav role="navigation">
+					<ul class="menu nav">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#">Products</a>
+							<ul class="dropdown-menu" role="menu">
+								<li role="presentation"><a href="http://109.74.11.69/products/sms">SMS Messaging</a></li>
+								<li role="presentation"><a href="http://109.74.11.69/products/push-messaging">Push Messaging</a></li>
+							</ul>
+						</li>
+						<li class="active"><a href="http://109.74.11.69/developers">Developers</a></li>
+						<li><a href="http://109.74.11.69/company/overview">Company</a></li>
+						<li><a href="http://109.74.11.69/contact">Contact</a></li>
+                        <li class="dropdown"><a href="http://109.74.11.69/" title="" class="dropdown-toggle active" data-toggle="dropdown" data-target="#">Login<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://my.mblox.com/">my.mBlox.com</a></li>
+                                <li><a href="http://engage.mblox.com/">Engage</a></li>
+                                <li><a href="https://na13.salesforce.com/sserv/login.jsp?orgId=00D300000000Sns">Client Portal</a></li>
+                                <li><a href="https://customer.mblox.com/index.cfm?fuseaction=home.login&message=&target=fuseaction%3Dcustomer%2Eportal&CFID=787171&CFTOKEN=67052243">mOpt</a></li>
+                            </ul>
+                        </li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="secondary">
+		<div class="container">
+			<h1 class="pull-left">Developer Center</h1>
+
+			<ul class="menu nav"> 
+				<li id="homenav" class=""><a href="http://109.74.11.69/developers/">Home</a> |&nbsp;</li>
+				<li id="smsnav"><a href="http://109.74.11.69/developers/docs/sms/sms_overview.html">SMS Messaging</a> |&nbsp;</li>				
+				<li id="pushnav"><a href="http://109.74.11.69/developers/docs/push/push_overview.html">Push &amp; Rich Messaging</a> |&nbsp;</li>				
+				<li id="emnav"><a href="http://109.74.11.69/developers/docs/em/em_overview.html">Engage</a> |&nbsp;</li>				
+				<li><a href="http://help.mblox.com/">Community &amp; Help</a></li>
+			</ul>
+		</div>
+</div>
+  
+
+    <div class="document">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="toc"><ul class="current affix-top">
+<li class="toctree-l1 current"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_overview.html">SMS Messaging</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_overview.html">XML Interface</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html">Account information</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">XML structure</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_connection.html">Connection management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_app_design.html">Design recommendations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_char_sets.html">Character sets and encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_accept_codes.html">Acceptance status codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_delivery_codes.html">Delivery status codes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_smpp_overview.html">SMPP Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_ig_overview.html">Implementation Guides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_glossary.html">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="http://109.74.11.69/developers/docs/push/push_overview.html">Push &amp; Rich Messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="http://109.74.11.69/developers/docs/em/em_overview.html">Engage</a></li>
+</ul>
+</div>
+
+
+
+
+        </div>
+      </div>        
+            <div class="documentwrapper">
+            <div class="bodywrapper">
+              <div class="body">
+                <ul class="breadcrumb">
+                        <li><a href="http://109.74.11.69/developers/docs/sms/sms_overview.html">SMS Messaging</a> <span class="divider">/</span> </li>
+                        <li><a href="http://109.74.11.69/developers/docs/sms/sms_xml_overview.html" accesskey="U">XML Interface</a> <span class="divider">/</span> </li>
+                    <li>XML structure </li>
+                </ul>
+                
+  <div class="section" id="xml-structure">
+<h1>XML structure<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure" title="Permalink to this headline">¶</a></h1>
+<p>To use the mBlox XML interface, all of your requests to, and responses from, the mBlox platform must be structured in four types of XML documents:</p>
+<ol class="arabic simple">
+<li>You send the <a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-notification-request"><em>Notification Request</em></a> to the mBlox platform with the MT message for the subscriber.</li>
+<li>The mBlox platform returns a <a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-notification-request-result"><em>Notification Request Result</em></a> to you with a status on your MT message request.</li>
+<li>The mBlox platform sends your request on to the operator’s network, which returns a Delivery Receipt with a status on the MT message delivery. The Delivery Receipt is converted to XML and sent back to you in the <a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-notification-service"><em>Notification Service</em></a>.</li>
+<li>When a subscriber sends an SMS message to your account via the operator network, the mBlox platform converts the MO message to XML and sends it to you in the <a class="reference internal" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-response-service"><em>Response Service</em></a>.</li>
+</ol>
+<p>You can see how these documents are used in the XML interface workflow by reading the <a class="reference external" href="http://109.74.11.69/developers/docs/sms/sms_xml_overview.html">XML interface overview</a>.</p>
+<p>The following sections contain both the details of each XML document and its DTD. Click on any line of XML in the code inspectors to see details about its implementation.</p>
+<div class="section" id="xml-structure-notification-request">
+<span id="id1"></span><h2>XML structure: Notification Request<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-notification-request" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Notification Request</strong> XML document contains the MT message you want to send to the subscriber.</p>
+<p>This document consists of a header providing account identification/authentication, followed by the message being submitted to the mBlox platform.</p>
+    <table class="codeinspector" id="codeinspector1">
+            <tbody><tr>
+                    <td>
+                            <div id="inspector">
+                                    <table>
+                                            <tbody><tr>
+                                                    <td id="number" class="last"><div class="num first">001</div><div class="num">002</div><div class="num">003</div><div class="num">004</div><div class="num">005</div><div class="num">006</div><div class="num">007</div><div class="num">008</div><div class="num">009</div><div class="num">010</div><div class="num">011</div><div class="num">012</div><div class="num">013</div><div class="num">014</div><div class="num">015</div><div class="num">016</div><div class="num">017</div><div class="num">018</div><div class="num">019</div><div class="num">020</div><div class="num">021</div><div class="num">022</div><div class="num">023</div><div class="num">024</div><div class="num">025</div><div class="num">026</div><div class="num">027</div><div class="num">028</div><div class="num">029</div></td>
+                                                    <td id="code" class="last"><div id="1code1" class="line first required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&lt;NotificationRequest&nbsp;Version="3.5"&gt;</div><div style="clear:both;"></div><div id="1code2" class="line required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&lt;NotificationHeader&gt;</div><div style="clear:both;"></div><div id="1code3" class="line required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PartnerName&gt;AccountName&lt;/PartnerName&gt;</div><div style="clear:both;"></div><div id="1code4" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PartnerPassword&gt;Password&lt;/PartnerPassword&gt;</div><div style="clear:both;"></div><div id="1code5" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Username&gt;Username&lt;/Username&gt;</div><div style="clear:both;"></div><div id="1code6" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubscriptionName&gt;SubscriptionName&lt;/SubscriptionName&gt;</div><div style="clear:both;"></div><div id="1code7" class="line required" style="cursor: pointer;">&lt;/NotificationHeader&gt;</div><div style="clear:both;"></div><div id="1code8" class="line required" style="cursor: pointer;">&lt;NotificationList&nbsp;BatchID="xxxxxxx"&gt;</div><div style="clear:both;"></div><div id="1code9" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Notification&nbsp;SequenceNumber="1"&nbsp;MessageType="SMS"&nbsp;Format="Unicode"&gt;</div><div style="clear:both;"></div><div id="1code10" class="line required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Message&gt;Message&nbsp;Body&lt;/Message&gt;</div><div style="clear:both;"></div><div id="1code11" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Profile&gt;-1&lt;/Profile&gt;</div><div style="clear:both;"></div><div id="1code12" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Udh&gt;Udh&lt;/Udh&gt;</div><div style="clear:both;"></div><div id="1code13" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SenderID&nbsp;Type="Shortcode"&gt;xxxxx&lt;/SenderID&gt;</div><div style="clear:both;"></div><div id="1code14" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ExpireDate&gt;MMDDHHmm&lt;/ExpireDate&gt;</div><div style="clear:both;"></div><div id="1code15" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Operator&gt;xxxxx&lt;/Operator&gt;</div><div style="clear:both;"></div><div id="1code16" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Tariff&gt;x&lt;/Tariff&gt;&nbsp;</div><div style="clear:both;"></div><div id="1code17" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Subscriber&gt;</div><div style="clear:both;"></div><div id="1code18" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubscriberNumber&gt;1xxxxxxxxxx&lt;/SubscriberNumber&gt;</div><div style="clear:both;"></div><div id="1code19" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Subscriber&gt;</div><div style="clear:both;"></div><div id="1code20" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Tags&gt;</div><div style="clear:both;"></div><div id="1code21" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Tag&nbsp;Name="Program"&gt;stdrt&lt;/Tag&gt;</div><div style="clear:both;"></div><div id="1code22" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Tag&nbsp;Name="SidTmo"&gt;xxx&lt;/Tag&gt;</div><div style="clear:both;"></div><div id="1code23" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Tag&nbsp;Name="SidVzW"&gt;xxxx&lt;/Tag&gt;</div><div style="clear:both;"></div><div id="1code24" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Tags&gt;</div><div style="clear:both;"></div><div id="1code25" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ContentType&gt;x&lt;/ContentType&gt;</div><div style="clear:both;"></div><div id="1code26" class="line optional" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ServiceId&gt;xxxxx&lt;/ServiceId&gt;</div><div style="clear:both;"></div><div id="1code27" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Notification&gt;</div><div style="clear:both;"></div><div id="1code28" class="line required" style="cursor: pointer;">&lt;/NotificationList&gt;</div><div style="clear:both;"></div><div id="1code29" class="line required" style="cursor: pointer;">&lt;/NotificationRequest&gt;</div><div style="clear:both;"></div></td>
+                                            </tr>
+                                    </tbody></table>
+                            </div>
+                    </td>
+                    <td>
+                            <div id="explanation" style="height: 595px;"><p>Line001:<strong> NotificationRequest</strong></p><hr>
+            <p>This is required.</p>
+            <p>This is the root element for the Notification Request.</p>
+            <p>mBlox recommends that you use the most recent <code>Version</code> of the request, which is <strong>"3.5"</strong>.</p>
+        </div>
+                    </td>
+            </tr>
+    </tbody></table>
+
+        <div id="code1_explanation1" class="source">
+            <p>This is required.</p>
+            <p>This is the root element for the Notification Request.</p>
+            <p>mBlox recommends that you use the most recent <code>Version</code> of the request, which is <strong>"3.5"</strong>.</p>
+        </div>
+
+        <!-- NotificationHeader -->
+        <div id="code1_explanation2" class="source">
+            <p>This is required.</p>
+                            <p>This tag block contains header information elements.</p>
+        </div>
+
+                    <!-- PartnerName -->
+        <div id="code1_explanation3" class="source">
+            <p>This is required.</p>
+            <p>Your mBlox account username as an alphanumeric string.</p>
+        </div>
+
+        <!-- PartnerPassword -->
+        <div id="code1_explanation4" class="source">
+            <p>This is required.</p>
+            <p>Your mBlox account password as an alphanumeric string.</p>
+        </div>
+
+        <!-- Username -->
+        <div id="code1_explanation5" class="source">
+            <p>This is optional and an alphanumeric string.</p>
+            <p>This element is setup by mBlox in case you want delivery receipts sent to a <a href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html">specific callback URL</a> that is different from the default one on the account.</p>
+        </div>
+
+        <!-- SubscriptionName -->
+        <div id="code1_explanation6" class="source">
+            <p>This is optional and an alphanumeric string.</p>
+            <p>This element is currently not used by mBlox. However, you may use it to identify MT messages grouped under a single <code>SubscriptionName</code>. For example, this may be useful when searching XML documents in log files.</p>
+        </div>
+
+        <!-- /NotificationHeader -->
+        <div id="code1_explanation7" class="source">
+            <p>This is required.</p>
+            <p>End of header information elements.</p>
+        </div>
+
+        <!-- NotificationList -->
+        <div id="code1_explanation8" class="source">
+            <p>This is required.</p>
+            <p>Although this element's format supports multiple messages in a list, you should only send one message per Notification Request. This means that you should specify only one <code>&lt;Notification&gt;</code> element in this tag block.</p>
+            <p>The <code>BatchID</code> attribute is used by mBlox to reference a specific Notification Request. We strongly recommend that you include a unique identifier in this field. This will allow you to use the <code>BatchID</code> to link related notification requests and responses because we will return the <code>BatchID</code> to you in the Notification Service. The format is a numeric string with a maximum value of 99,999,999.</p>
+        </div>
+
+        <!-- Notification -->
+        <div id="code1_explanation9" class="source">
+            <p>This is required.</p>
+            <p>This tag block contains the details for a single Notification Request.</p>
+            <p>Since you should only send one message at a time, the <code>SequenceNumber</code> attribute should be set to a value of <code>1</code>.</p>
+            <p>The <code>MessageType</code> attribute values can be: </p>
+            <ul><li><code>SMS</code> (default) - Send a standard message.</li>
+            <li><code>FlashSMS</code> - Send a Flash SMS message.</li></ul>
+            <p>The <code>Format</code> attribute defines the format of the <code>&lt;Message&gt;</code> contents. The values can be: </p>
+            <ul><li><code>Text</code> (default)</li>
+            <li><code>Binary</code></li>
+            <li><code>Unicode</code></li>
+            <li><code>Imode</code></li></ul>
+            <p>See the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_char_sets.html" target="_blank">Character Sets and Encoding</a> documentation for information on the supported character sets and encoding.
+        </p></div>
+
+        <!-- Message -->
+        <div id="code1_explanation10" class="source">
+            <p>This is required.</p>
+            <p>This is the actual body of your message, encoded as specified by the <code>Format</code> attribute in the <code>&lt;Notification&gt;</code> element.</p>
+            <p>The value is an alphanumeric string with a maximum length for each format as follows:</p>
+            <ul>
+            <li><strong>Text</strong> - 160 characters </li>
+            <li><strong>Binary</strong> - 140 bytes </li>
+            <li><strong>Unicode</strong> - 70 characters </li>
+            </ul>
+            <p>See the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_char_sets.html" target="_blank">Character Sets and Encoding</a> documentation for information on the supported character sets and encoding.
+        </p></div>
+
+        <!-- Profile -->
+        <div id="code1_explanation11" class="source">
+            <p>This is required.</p>
+            <p>If you have multiple mBlox SMS products, use the appropriate Profile ID for the product (provided in your account information). If you have only purchased a single product, use -1.</p>
+        </div>
+
+        <!-- UDH -->
+        <div id="code1_explanation12" class="source">
+            <p>This is optional but required when the <code>Format</code> attribute of the <code>Notification</code> tag is set to Binary.</p>
+            <p>Contains the optional User Data Header, which is used for sending binary SMS. Note that if a UDH is included, it decreases the maximum payload of the message body.</p>
+        </div>
+
+        <!-- SenderID -->
+        <div id="code1_explanation13" class="source">
+            <p>This is required.</p>
+            <p>This is the identifier you want to appear as the From address on the SMS message.</p>
+            <p>The <code>Type</code> attribute specifies the format of the <code>&lt;SenderID&gt;</code>:</p>
+            <ul>
+                <li><code>Alpha</code> - An alphanumeric value. Subscribers are unable to reply to "Alpha" originators. Max length of 11 characters. Recommended that it does not contain spaces and is limited to the following characters: lower case "a" to "z", upper case "A" to "Z", digits "0" to "9".</li>
+                <li><code>Numeric</code> (default) - A numeric value, such as a phone number, that a user can reply to. Max length of 15 characters. Includes country code e.g. "447900000000". Displayed as an international phone number, i.e. preceded by a "+" symbol.</li>
+                <li><code>Shortcode</code> - A numeric string with a max length of 15 characters. A network-specific code that only works on the network operator you are connected to. Displayed as a network short code, i.e. without a preceding "+".</li>
+            </ul>
+        </div>
+
+         <!-- ExpireDate -->
+        <div id="code1_explanation14" class="source">
+            <p>The date and time when the message will be discarded by the short message service center (SMSC) if it has not yet been successfully delivered to the subscriber.</p>
+            <p>For most products, you can set the expiration time between 5 minutes and 12 hours from submission. Any time set outside of that period will be replaced with these values.</p>
+            <p>The value is a UTC date and time (no daylight saving adjustment) in format <code>MMDDHHmm</code>.</p>
+        </div>
+
+        <!-- Operator -->
+        <div id="code1_explanation15" class="source">
+            <p>Specifies the numeric identifier for the operator, the OperatorID, through which the message should be routed.</p>
+            <p>This parameter is <strong>only</strong> used if you are using short codes to send SMS to North America or Latin America and you need to tell mBlox which mobile operator to send the message to. mBlox also offers a feature called Sure Route, where we work out the destination operator for you. If your account has been set up for Sure Route, you should not send this parameter. Contact your Account Manager if you need the Sure Route feature.</p>
+
+            <p>This element will not be present if your <a href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html" target="_blank">acknowledgement scheme</a> is set to Immediate Return.</p>
+            <p>See the <a href="http://109.74.11.69/developers/docs/sms/sms_operators.html" target="_blank">Operator IDs and names</a> reference documentation.</p>
+        </div>
+
+        <!-- Tariff -->
+        <div id="code1_explanation16" class="source">
+            <p>This parameter is <strong>only</strong> used if you are using short codes to send SMS to North America or Latin America and you need to tell mBlox which mobile operator to send the message to. mBlox also offers a feature called Sure Route, where we work out the destination operator for you. If your account has been set up for Sure Route, you should not send this parameter. Contact your Account Manager if you need the Sure Route feature.</p>
+        </div>
+
+        <!-- Subscriber -->
+        <div id="code1_explanation17" class="source">
+            <p>This is required.</p>
+            <p>This tag block contains elements related to the individual recipient subscriber.</p>
+            <p>You should only include one <code>&lt;Subscriber&gt;</code> element in this XML Notification Request.</p>
+        </div>
+
+        <!-- SubscriberNumber -->
+        <div id="code1_explanation18" class="source">
+            <p>This is required.</p>
+            <p>The recipient subscriber's phone number.</p>
+            <p>The format is a numeric string with a minimum length of 6 characters and a maximum length of 20 characters. The value includes country code, e.g. "447900000000". mBlox will drop leading "00" but we will reject the message if it includes the "+" in front of the number.</p>
+        </div>
+
+        <!-- /Subscriber -->
+        <div id="code1_explanation19" class="source">
+            <p>This is required.</p>
+            <p>End of destination subscriber information.</p>
+        </div>
+
+        <!-- Tags -->
+        <div id="code1_explanation20" class="source">
+            <p>Within the <code>&lt;Tag&gt;</code> block, you can specify up to 10 <code>&lt;Tag&gt;</code> elements, which are multi-purpose elements used to carry any parameters that are required for a specific mBlox product.</p>
+            <p>Individual <code>&lt;Tag&gt;</code> elements are identified by their <code>Name</code> attributes.</p>
+        </div>
+
+        <!-- Tag Name="Program" -->
+        <div id="code1_explanation21" class="source">
+                            <div class="popover-content">
+                                    <p>This parameter should  <strong>only</strong> be used if you are using the two way platform to send standard rate (tariff is 0) SMS to USA. You should not use this parameter if the tariff is  FTEU or free. </p>
+                            </div>
+        </div>
+
+        <!-- Tag Name="SidTmo" -->
+        <div id="code1_explanation22" class="source">
+                            <div class="popover-content">
+                                    <p>This parameter is <strong>only</strong> used if you are using short codes to send SMS to the USA, otherwise you should not send this parameter. It is a key which mBlox uses to provide information required by the US mobile operators when sending them messages. If mBlox has provided you the value for this parameter in your provisioning information, you must submit it.</p>
+                <p>The value is a serviceID number that you receive from mBlox 6-12 weeks after you have submitted a campaign request for approval.</p>
+                                    <p><strong>NOTE:</strong> Normally a client would only need to include the single ServiceId element when using the sure-route account, but if the VZW and TMO campaigns are submitted on two separate orders then the SidVzW and SidTmo are required.</p>
+                            </div>
+        </div>
+
+        <!-- Tag Name="SidVxW" -->
+        <div id="code1_explanation23" class="source">
+                            <div class="popover-content">
+                                    <p>This parameter is <strong>only</strong> used if you are using short codes to send SMS to the USA, otherwise you should not send this parameter. It is a key which mBlox uses to provide information required by the US mobile operators when sending them messages. If mBlox has provided you the value for this parameter in your provisioning information, you must submit it.</p>
+                <p>The value is a serviceID number that you receive from mBlox 6-12 weeks after you have submitted a campaign request for approval.</p>
+                                    <p><strong>NOTE:</strong> Normally a client would only need to include the single ServiceId element when using the sure-route account, but if the VZW and TMO campaigns are submitted on two separate orders then the SidVzW and SidTmo are required.</p>
+                            </div>
+        </div>
+
+        <!-- /Tags -->
+        <div id="code1_explanation24" class="source">
+                            <div class="popover-content">
+                                    <p>End of tag elements.</p>
+                            </div>
+        </div>
+
+        <!-- ContentType -->
+        <div id="code1_explanation25" class="source">
+                            <div class="popover-content">
+                <p>The <code>ContentType</code> element is required and always set to -1.</p>
+                            </div>
+        </div>
+
+        <!-- ServiceId -->
+        <div id="code1_explanation26" class="source">
+                            <div class="popover-content">
+                <p>This is optional except in the cases noted below.</p>
+                                    <p>This parameter is <strong>only</strong> used if you are using short codes to send SMS to the USA, otherwise you should not send this parameter. It is a key which mBlox uses to provide information required by the US mobile operators when sending them messages. If mBlox has provided you the value for this parameter in your provisioning information, you must submit it.</p>
+                            </div>
+        </div>
+
+        <!-- /Notification -->
+        <div id="code1_explanation27" class="source">
+                            <div class="popover-content">
+                <p>This is required.</p>
+                                    <p>End of details about your notification message.</p>
+                            </div>
+        </div>
+
+        <!-- /NotificationList -->
+        <div id="code1_explanation28" class="source">
+                            <div class="popover-content">
+                <p>This is required.</p>
+                                    <p>End of your notification message.</p>
+                            </div>
+        </div>
+
+        <!-- /NotificationRequest -->
+        <div id="code1_explanation29" class="source">
+                            <div class="popover-content">
+                <p>This is required.</p>
+                                    <p>End of the notification request.</p>
+                            </div>
+        </div>
+
+    <div id="code1" class="source">&lt;NotificationRequest Version="3.5"&gt;|||code1_explanation1|||required
+&lt;NotificationHeader&gt;|||code1_explanation2|||required!!!
+    &lt;PartnerName&gt;AccountName&lt;/PartnerName&gt;|||code1_explanation3|||required!!!
+    &lt;PartnerPassword&gt;Password&lt;/PartnerPassword&gt;|||code1_explanation4|||required!!!
+    &lt;Username&gt;Username&lt;/Username&gt;|||code1_explanation5|||required!!!
+    &lt;SubscriptionName&gt;SubscriptionName&lt;/SubscriptionName&gt;|||code1_explanation6|||required!!!
+&lt;/NotificationHeader&gt;|||code1_explanation7|||required!!!
+
+&lt;NotificationList BatchID="xxxxxxx"&gt;|||code1_explanation8|||required!!!
+    &lt;Notification SequenceNumber="1" MessageType="SMS" Format="Unicode"&gt;|||code1_explanation9|||required!!!
+        &lt;Message&gt;Message Body&lt;/Message&gt;|||code1_explanation10|||required!!!
+        &lt;Profile&gt;-1&lt;/Profile&gt;|||code1_explanation11|||required!!!
+        &lt;Udh&gt;Udh&lt;/Udh&gt;|||code1_explanation12|||required!!!
+        &lt;SenderID Type="Shortcode"&gt;xxxxx&lt;/SenderID&gt;|||code1_explanation13|||required!!!
+        &lt;ExpireDate&gt;MMDDHHmm&lt;/ExpireDate&gt;|||code1_explanation14|||optional!!!
+        &lt;Operator&gt;xxxxx&lt;/Operator&gt;|||code1_explanation15|||optional!!!
+        &lt;Tariff&gt;x&lt;/Tariff&gt; |||code1_explanation16|||optional!!!
+
+        &lt;Subscriber&gt;|||code1_explanation17|||required!!!
+            &lt;SubscriberNumber&gt;1xxxxxxxxxx&lt;/SubscriberNumber&gt;|||code1_explanation18|||required!!!
+        &lt;/Subscriber&gt;|||code1_explanation19|||required!!!
+
+        &lt;Tags&gt;|||code1_explanation20|||optional!!!
+            &lt;Tag Name="Program"&gt;stdrt&lt;/Tag&gt;|||code1_explanation21|||optional!!!
+            &lt;Tag Name="SidTmo"&gt;xxx&lt;/Tag&gt;|||code1_explanation22|||optional!!!
+            &lt;Tag Name="SidVzW"&gt;xxxx&lt;/Tag&gt;|||code1_explanation23|||optional!!!
+        &lt;/Tags&gt;|||code1_explanation24|||optional!!!
+
+        &lt;ContentType&gt;x&lt;/ContentType&gt;|||code1_explanation25|||optional!!!
+        &lt;ServiceId&gt;xxxxx&lt;/ServiceId&gt;|||code1_explanation26|||optional!!!
+    &lt;/Notification&gt;|||code1_explanation27|||required!!!
+&lt;/NotificationList&gt;|||code1_explanation28|||required!!!
+&lt;/NotificationRequest&gt;|||code1_explanation29|||required!!!</div></div>
+<div class="section" id="the-notification-request-formal-dtd">
+<h2>The Notification Request formal DTD<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#the-notification-request-formal-dtd" title="Permalink to this headline">¶</a></h2>
+<p>The following is the formal DTD for the <strong>Notification Request</strong>. Use it to validate your XML document. mBlox will notify you in advance of any revisions to the DTD.</p>
+<div class="highlight-python"><pre>&lt;!ELEMENT NotificationRequest (NotificationHeader, NotificationList)&gt;
+&lt;!ATTLIST NotificationRequest
+    Version CDATA "3.5"
+&gt;
+&lt;!ELEMENT NotificationHeader (PartnerName, PartnerPassword, Username?, SubscriptionName?)&gt;
+&lt;!ELEMENT PartnerName (#PCDATA)&gt;
+&lt;!ELEMENT PartnerPassword (#PCDATA)&gt;
+&lt;!ELEMENT Username (#PCDATA)&gt;
+&lt;!ELEMENT SubscriptionName (#PCDATA)&gt;
+&lt;!ELEMENT NotificationList (Notification+)&gt;
+&lt;!ATTLIST NotificationList BatchID CDATA #IMPLIED
+&gt;
+&lt;!ELEMENT Notification (Message, Profile?, Udh?, SenderID?, ExpireDate?, Operator?, Tariff?, Subscriber+, Tags?, ServiceDesc?, ContentType?, ServiceId?)&gt;
+&lt;!ATTLIST Notification
+    SequenceNumber CDATA #REQUIRED
+    MessageType (SMS | FlashSMS) #IMPLIED
+    Format (Unicode | Binary | Imode) #IMPLIED
+&gt;
+&lt;!ELEMENT Message (#PCDATA)&gt;
+&lt;!ELEMENT Profile (#PCDATA)&gt;
+&lt;!ELEMENT Udh (#PCDATA)&gt;
+&lt;!ELEMENT SenderID (#PCDATA)&gt;
+&lt;!ATTLIST SenderID
+    Type (Alpha | Numeric | Shortcode) "Numeric"
+&gt;
+&lt;!ELEMENT ExpireDate (#PCDATA)&gt;
+&lt;!ELEMENT Subscriber (SubscriberNumber?, SessionId?)&gt;
+&lt;!ELEMENT SubscriberNumber (#PCDATA)&gt;
+&lt;!ELEMENT Operator (#PCDATA)&gt;
+&lt;!ELEMENT Tariff (#PCDATA)&gt;
+&lt;!ELEMENT SessionId (#PCDATA)&gt;
+&lt;!ELEMENT Tag (#PCDATA)&gt;
+&lt;!ATTLIST Tag
+    Name CDATA #REQUIRED
+&gt;
+&lt;!ELEMENT Tags (Tag+)&gt;
+&lt;!ELEMENT ServiceDesc (#PCDATA)&gt;
+&lt;!ELEMENT ContentType (#PCDATA)&gt;
+&lt;!ELEMENT ServiceId (#PCDATA)&gt;</pre>
+</div>
+</div>
+<div class="section" id="xml-structure-notification-request-result">
+<span id="id2"></span><h2>XML structure: Notification Request Result<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-notification-request-result" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Notification Request Result</strong> XML document acknowledges the receipt of your request to send the MT message to the subscriber. This acknowledgement is sent to you before mBlox sends your message request onto the operator’s network.</p>
+<p>This document consists of a header, containing account identification data and a result indicator which relates to the Notification Request’s XML format and header. This is followed by a list containing message-related and subscriber-related result indicators.</p>
+    <table class="codeinspector" id="codeinspector2">
+            <tbody><tr>
+                    <td>
+                            <div id="inspector">
+                                    <table>
+                                            <tbody><tr>
+                                                    <td id="number" class="last"><div class="num first">001</div><div class="num">002</div><div class="num">003</div><div class="num">004</div><div class="num">005</div><div class="num">006</div><div class="num">007</div><div class="num">008</div><div class="num">009</div><div class="num">010</div><div class="num">011</div><div class="num">012</div><div class="num">013</div><div class="num">014</div><div class="num">015</div><div class="num">016</div><div class="num">017</div><div class="num">018</div><div class="num">019</div><div class="num">020</div><div class="num">021</div></td>
+                                                    <td id="code" class="last"><div id="2code1" class="line first required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&lt;NotificationRequestResult&nbsp;Version="3.5"&gt;</div><div style="clear:both;"></div><div id="2code2" class="line required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&lt;NotificationResultHeader&gt;</div><div style="clear:both;"></div><div id="2code3" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PartnerName&gt;AccountName&lt;/PartnerName&gt;</div><div style="clear:both;"></div><div id="2code4" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;PartnerRef&gt;&lt;/PartnerRef&gt;</div><div style="clear:both;"></div><div id="2code5" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;RequestResultCode&gt;0&lt;/RequestResultCode&gt;</div><div style="clear:both;"></div><div id="2code6" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;RequestResultText&gt;OK&lt;/RequestResultText&gt;</div><div style="clear:both;"></div><div id="2code7" class="line required" style="cursor: pointer;">&lt;/NotificationResultHeader&gt;</div><div style="clear:both;"></div><div id="2code8" class="line required" style="cursor: pointer;">&lt;NotificationResultList&gt;</div><div style="clear:both;"></div><div id="2code9" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;NotificationResult&nbsp;SequenceNumber="1"&gt;</div><div style="clear:both;"></div><div id="2code10" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NotificationResultCode&gt;0&lt;/NotificationResultCode&gt;</div><div style="clear:both;"></div><div id="2code11" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;NotificationResultText&gt;OK&lt;/NotificationResultText&gt;</div><div style="clear:both;"></div><div id="2code12" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubscriberResult&gt;</div><div style="clear:both;"></div><div id="2code13" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubscriberNumber&gt;1xxxxxxxxxx&lt;/SubscriberNumber&gt;</div><div style="clear:both;"></div><div id="2code14" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubscriberResultCode&gt;0&lt;/SubscriberResultCode&gt;</div><div style="clear:both;"></div><div id="2code15" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubscriberResultText&gt;OK&lt;/SubscriberResultText&gt;</div><div style="clear:both;"></div><div id="2code16" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Retry&gt;0&lt;/Retry&gt;</div><div style="clear:both;"></div><div id="2code17" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Operator&gt;0&lt;/Operator&gt;</div><div style="clear:both;"></div><div id="2code18" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/SubscriberResult&gt;</div><div style="clear:both;"></div><div id="2code19" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/NotificationResult&gt;</div><div style="clear:both;"></div><div id="2code20" class="line required" style="cursor: pointer;">&lt;/NotificationResultList&gt;</div><div style="clear:both;"></div><div id="2code21" class="line required" style="cursor: pointer;">&lt;/NotificationRequestResult&gt;</div><div style="clear:both;"></div></td>
+                                            </tr>
+                                    </tbody></table>
+                            </div>
+                    </td>
+                    <td>
+                            <div id="explanation" style="height: 427px;"><p>Line001:<strong> NotificationRequestResult</strong></p><hr>
+    <p>This is the root element for the Notification Request Result.</p>
+    <p>The current version number for the Notification Request Result is <strong>"3.5"</strong>.</p>
+<p>mBlox recommends that your application ignores the version attribute when processing this XML document from the mBlox platform.</p>
+        </div>
+                    </td>
+            </tr>
+    </tbody></table>
+
+        <!-- NotificationRequestResult -->
+        <div id="code2_explanation1" class="source">
+    <p>This is the root element for the Notification Request Result.</p>
+    <p>The current version number for the Notification Request Result is <strong>"3.5"</strong>.</p>
+<p>mBlox recommends that your application ignores the version attribute when processing this XML document from the mBlox platform.</p>
+        </div>
+
+        <!-- NotificationResultHeader -->
+        <div id="code2_explanation2" class="source">
+            <p>Contains results related to the processing of the header information submitted in your Notification Request.</p>
+        </div>
+
+                    <!-- PartnerName -->
+        <div id="code2_explanation3" class="source">
+            <p>Your mBlox account username that you supplied in the <code>&lt;PartnerName&gt;</code> element of the Notification Request.</p>
+        </div>
+
+        <!-- PartnerRef -->
+        <div id="code2_explanation4" class="source">
+            <p>This element is not used and is always empty.</p>
+        </div>
+
+        <!-- RequestResultCode -->
+        <div id="code2_explanation5" class="source">
+            <p>A numeric code that responds to the header information you submitted in your Notification Request.</p>
+
+            <ul>
+            <li><strong>0</strong> - OK</li>
+            <li><strong>3</strong> - Incorrect <code>&lt;PartnerName&gt;</code> or <code>&lt;PartnerPassword&gt;</code> values</li>
+            <li><strong>9</strong> - Unspecified error</li>
+            </ul>
+            <p>The numeric codes correspond to the <code>RequestResultText</code> explanation, if it is included.</p>
+        </div>
+
+        <!-- RequestResultText -->
+        <div id="code2_explanation6" class="source">
+            <p>If present, the format is an alphanumeric string that provides an explanation of the <code>RequestResultCode</code>:</p>
+            <ul>
+            <li><strong>0</strong> - OK</li>
+            <li><strong>3</strong> - Incorrect <code>&lt;PartnerName&gt;</code> or <code>&lt;PartnerPassword&gt;</code> values</li>
+            <li><strong>9</strong> - Unspecified error</li>
+            </ul>
+        </div>
+
+        <!-- /NotificationResultHeader -->
+        <div id="code2_explanation7" class="source">
+            <p>End of header information elements.</p>
+        </div>
+
+        <!-- NotificationResultList -->
+        <div id="code2_explanation8" class="source">
+            <p>This element and its child elements will only be included if the value returned in <code>&lt;RequestResultCode&gt;</code> is "0". This means that the XML formatting and header information in the Notification Request have been reported as OK.</p>
+            <p>This tag block, if present, will contain a single <code>&lt;NotificationResult&gt;</code> element.</p>
+        </div>
+
+        <!-- NotificationResult -->
+        <div id="code2_explanation9" class="source">
+            <p>Contains the result information associated with the <code>&lt;Notification&gt;</code> element in your submitted Notification Request.</p>
+            <p>The <code>SequenceNumber</code> attribute corresponds to the value supplied in the Notification Request. The format is an numeric string with a maximum value of 99,999.</p>
+        </div>
+
+        <!-- NotificationResultCode -->
+        <div id="code2_explanation10" class="source">
+            <p>A numeric code indicating the result of a Notification Request:</p>
+            <ul>
+            <li><strong>0</strong> - OK.</li>
+            <li><strong>2</strong> - Invalid Sequence or no <code>&lt;Message&gt;</code> element.</li>
+            <li><strong>5</strong> - Malformed <code>&lt;SenderID&gt;</code>.</li>
+            <li><strong>7</strong> - Malformed <code>&lt;Message&gt;</code>.</li>
+            <li><strong>10</strong> - Malformed <code>&lt;ExpireDate&gt;</code>.</li>
+            <li><strong>11</strong> - Malformed <code>&lt;BatchID&gt;</code>.</li>
+            <li><strong>12</strong> - Malformed or unrecognized <code>&lt;Profile&gt;</code>.</li>
+            <li><strong>13</strong> - Malformed <code>&lt;Udh&gt;</code>.</li>
+            <li><strong>14</strong> - Malformed <code>&lt;Operator&gt;</code>.</li>
+            <li><strong>15</strong> - Malformed <code>&lt;Tariff&gt;</code>.</li>
+            <li><strong>16</strong> - Malformed <code>&lt;ServiceDesc&gt;</code>.</li>
+            <li><strong>17</strong> - Malformed <code>&lt;ContentType&gt;</code>.</li>
+            <li><strong>18</strong> - Malformed <code>&lt;ServiceId&gt;</code>.</li>
+            </ul>
+        </div>
+
+        <!-- NotificationResultText -->
+        <div id="code2_explanation11" class="source">
+            <p>If present, the format is an alphanumeric string that provides an explanation of the <code>NotificationResultCode</code>:</p>
+            <ul>
+            <li><strong>0</strong> - OK.</li>
+            <li><strong>2</strong> - Invalid Sequence or no <code>&lt;Message&gt;</code> element.</li>
+            <li><strong>5</strong> - Malformed <code>&lt;SenderID&gt;</code>.</li>
+            <li><strong>7</strong> - Malformed <code>&lt;Message&gt;</code>.</li>
+            <li><strong>10</strong> - Malformed <code>&lt;ExpireDate&gt;</code>.</li>
+            <li><strong>11</strong> - Malformed <code>&lt;BatchID&gt;</code>.</li>
+            <li><strong>12</strong> - Malformed or unrecognized <code>&lt;Profile&gt;</code>.</li>
+            <li><strong>13</strong> - Malformed <code>&lt;Udh&gt;</code>.</li>
+            <li><strong>14</strong> - Malformed <code>&lt;Operator&gt;</code>.</li>
+            <li><strong>15</strong> - Malformed <code>&lt;Tariff&gt;</code>.</li>
+            <li><strong>16</strong> - Malformed <code>&lt;ServiceDesc&gt;</code>.</li>
+            <li><strong>17</strong> - Malformed <code>&lt;ContentType&gt;</code>.</li>
+            <li><strong>18</strong> - Malformed <code>&lt;ServiceId&gt;</code>.</li>
+            </ul>
+        </div>
+
+        <!-- SubscriberResult -->
+        <div id="code2_explanation12" class="source">
+            <p>This element and its child elements will only be included if the value returned in <code>&lt;NotificationResultCode&gt;</code> is "0". This means that the XML format is OK and no other error has occurred at the <code>&lt;Notification&gt;</code> level.</p>
+        </div>
+
+         <!-- SubscriberNumber -->
+        <div id="code2_explanation13" class="source">
+            <p>This numeric string corresponds to the individual <code>&lt;SubscriberNumber&gt;</code> provided in the Notification Request.</p>
+            <p>Although this element is optional within the DTD, it will always be included.</p>
+        </div>
+
+        <!-- SubscriberResultCode -->
+        <div id="code2_explanation14" class="source">
+            <p>A numeric code which identifies the subscriber-related result.</p>
+            <p><b>Note:</b> If the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html" target="_blank">acknowledgement scheme</a> is set to Immediate Return, this value may be "0", even if the message subsequently fails in the mBlox core platform. </p>
+            <ul>
+            <li><strong>0</strong> - OK, successful submission to the mBlox platform</li>
+            <li><strong>1</strong> - <code>&lt;Profile&gt;</code> could not be used</li>
+            <li><strong>2</strong> - Message could not be forwarded to mBlox core platform</li>
+            <li><strong>4</strong> - Customer reference could not be found</li>
+            <li><strong>5</strong> - Error in message data causing translation error</li>
+            <li><strong>6</strong> - Message contains illegal characters causing encoding error</li>
+            <li><strong>7</strong> - General sending error</li>
+            <li><strong>8</strong> - Private connection configuration error</li>
+            <li><strong>9</strong> - Send timed out – success unknown</li>
+            <li><strong>10</strong> - Message rejected by mBlox core platform – acceptance status code returned in <code>&lt;SubscriberResultText&gt;</code></li>
+            <li><strong>11</strong> - Timeout waiting for mBlox core platform to respond – success of submission to the core platform is unknown. Repeated receipt of this code in response to MT submissions typically indicates that there is a problem between your application and the mBlox XML server. Contact mBlox customer support in this case (support@mblox.com).</li>
+            <li><strong>12</strong> - Invalid <code>&lt;Subscriber&gt;</code></li>
+            <li><strong>16</strong> - Invalid <code>&lt;SessionId&gt;</code></li>
+            <li><strong>17</strong> - Both <code>&lt;SubscriberNumber&gt;</code> and <code>&lt;SessionId&gt;</code> are missing
+            </li><li><strong>100</strong> - Destination busy</li>
+            </ul>
+            <p>If the <code>&lt;SubscriberResultCode&gt;</code> has a value of <code>10</code>, the <code>&lt;SubscriberResultText&gt;</code> will contain an <a href="http://109.74.11.69/developers/docs/sms/sms_xml_accept_codes.html" target="_blank">acceptance status code</a>.</p>
+        </div>
+
+        <!-- SubscriberResultText -->
+        <div id="code2_explanation15" class="source">
+            <p>If present, the format is an alphanumeric string that provides an explanation of the <code>&lt;SubscriberResultCode&gt;</code>:</p>
+            <ul>
+            <li><strong>0</strong> - OK, successful submission to the mBlox platform</li>
+            <li><strong>1</strong> - <code>&lt;Profile&gt;</code> could not be used</li>
+            <li><strong>2</strong> - Message could not be forwarded to mBlox core platform</li>
+            <li><strong>4</strong> - Customer reference could not be found</li>
+            <li><strong>5</strong> - Error in message data causing translation error</li>
+            <li><strong>6</strong> - Message contains illegal characters causing encoding error</li>
+            <li><strong>7</strong> - General sending error</li>
+            <li><strong>8</strong> - Private connection configuration error</li>
+            <li><strong>9</strong> - Send timed out – success unknown</li>
+            <li><strong>10</strong> - Message rejected by mBlox core platform – acceptance status code returned in <code>&lt;SubscriberResultText&gt;</code></li>
+            <li><strong>11</strong> - Timeout waiting for mBlox core platform to respond – success of submission to the core platform is unknown. Repeated receipt of this code in response to MT submissions typically indicates that there is a problem between your application and the mBlox XML server. Contact mBlox customer support in this case (support@mblox.com).</li>
+            <li><strong>12</strong> - Invalid <code>&lt;Subscriber&gt;</code></li>
+            <li><strong>16</strong> - Invalid <code>&lt;SessionId&gt;</code></li>
+            <li><strong>17</strong> - Both <code>&lt;SubscriberNumber&gt;</code> and <code>&lt;SessionId&gt;</code> are missing
+            </li><li><strong>100</strong> - Destination busy</li>
+            </ul>
+            <p>If the <code>&lt;SubscriberResultCode&gt;</code> has a value of <code>10</code>, the <code>&lt;SubscriberResultText&gt;</code> will contain an <a href="http://109.74.11.69/developers/docs/sms/sms_xml_accept_codes.html" target="_blank">acceptance status code</a>.</p>
+        </div>
+
+        <!-- Retry -->
+        <div id="code2_explanation16" class="source">
+            <p>This code specifies whether the submission of this message should be tried again:</p>
+            <ul>
+            <li><strong>0</strong> - Submission should not be tried again. This code will be sent if your Notification Request can never be delivered.</li>
+            <li><strong>1</strong> - Submission should be tried again. This code will be sent if your Notification Request message is fine but there might be a technology-related reason for the rejection.</li>
+            </ul>
+        </div>
+
+        <!-- Operator -->
+        <div id="code2_explanation17" class="source">
+            <p>If present, contains a numeric identifier, the <b><i>OperatorID</i></b>, uniquely identifying the operator to which the message has been submitted.</p>
+            <p>This element will not be present if the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html" target="_blank">acknowledgement scheme</a> is set to Immediate Return.</p>
+            <p>See the <a href="http://109.74.11.69/developers/docs/sms/sms_operators.html" target="_blank">Operator IDs and names</a> reference documentation.</p>
+        </div>
+
+        <!-- /SubscriberResult -->
+        <div id="code2_explanation18" class="source">
+            <p>End of delivery status information for a subscriber.</p>
+        </div>
+
+        <!-- /NotificationResult -->
+        <div id="code2_explanation19" class="source">
+            <p>End of notification result.</p>
+        </div>
+
+        <!-- /NotificationResultList -->
+        <div id="code2_explanation20" class="source">
+            <p>End of notification result tag block.</p>
+        </div>
+
+        <!-- /NotificationRequestResult -->
+        <div id="code2_explanation21" class="source">
+            <p>End of notification request result.</p>
+        </div>
+
+
+                    <div id="code2" class="source">&lt;NotificationRequestResult Version="3.5"&gt;|||code2_explanation1|||required!!!
+&lt;NotificationResultHeader&gt;|||code2_explanation2|||required!!!
+    &lt;PartnerName&gt;AccountName&lt;/PartnerName&gt;|||code2_explanation3|||required!!!
+    &lt;PartnerRef&gt;&lt;/PartnerRef&gt;|||code2_explanation4|||required!!!
+    &lt;RequestResultCode&gt;0&lt;/RequestResultCode&gt;|||code2_explanation5|||required!!!
+    &lt;RequestResultText&gt;OK&lt;/RequestResultText&gt;|||code2_explanation6|||required!!!
+&lt;/NotificationResultHeader&gt;|||code2_explanation7|||required!!!
+
+&lt;NotificationResultList&gt;|||code2_explanation8|||required!!!
+    &lt;NotificationResult SequenceNumber="1"&gt;|||code2_explanation9|||required!!!
+        &lt;NotificationResultCode&gt;0&lt;/NotificationResultCode&gt;|||code2_explanation10|||required!!!
+        &lt;NotificationResultText&gt;OK&lt;/NotificationResultText&gt;|||code2_explanation11|||required!!!
+
+        &lt;SubscriberResult&gt;|||code2_explanation12|||required!!!
+            &lt;SubscriberNumber&gt;1xxxxxxxxxx&lt;/SubscriberNumber&gt;|||code2_explanation13|||required!!!
+            &lt;SubscriberResultCode&gt;0&lt;/SubscriberResultCode&gt;|||code2_explanation14|||required!!!
+
+            &lt;SubscriberResultText&gt;OK&lt;/SubscriberResultText&gt;|||code2_explanation15|||required!!!
+            &lt;Retry&gt;0&lt;/Retry&gt;|||code2_explanation16|||required!!!
+            &lt;Operator&gt;0&lt;/Operator&gt;|||code2_explanation17|||required!!!
+        &lt;/SubscriberResult&gt;|||code2_explanation18|||required!!!
+
+    &lt;/NotificationResult&gt;|||code2_explanation19|||required!!!
+&lt;/NotificationResultList&gt;|||code2_explanation20|||required!!!
+&lt;/NotificationRequestResult&gt;|||code2_explanation21|||required!!!</div><p>Note that there are three related result codes in the Notification Request Result:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">&lt;RequestResultCode&gt;</span></tt> - contains a result related to the XML format or header parameters of the original Notification Request</li>
+<li><tt class="docutils literal"><span class="pre">&lt;NotificationResultCode&gt;</span></tt> - contains a result related to whether the parameters in the <tt class="docutils literal"><span class="pre">&lt;Notification&gt;</span></tt> element of the original Notification Request have the correct syntax</li>
+<li><tt class="docutils literal"><span class="pre">&lt;SubscriberResultCode&gt;</span></tt> - contains a result related to the whether the individual MT message has been accepted by the mBlox platform</li>
+</ul>
+<p>The lower-level code only occurs if the higher-level code does not indicated an error. For example, the <tt class="docutils literal"><span class="pre">&lt;SubscriberResultCode&gt;</span></tt> element is only present in the XML document if the <tt class="docutils literal"><span class="pre">&lt;NotificationResultCode&gt;</span></tt> corresponds to “OK”.</p>
+<p>A retry parameter indicates whether your application should attempt to retry a Notification Request which has returned an error.</p>
+<p><tt class="docutils literal"><span class="pre">&lt;RequestResultCode&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;NotificationResultCode&gt;</span></tt> errors should not typically occur if the interface is functioning correctly and will never be accompanied by an indication that the Notification Request should be retried. If you get a large numbers of these errors, you should debug your application.</p>
+</div>
+<div class="section" id="the-notification-request-result-formal-dtd">
+<h2>The Notification Request Result formal DTD<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#the-notification-request-result-formal-dtd" title="Permalink to this headline">¶</a></h2>
+<p>The following is the formal DTD for the <strong>Notification Request Result</strong>. mBlox will notify you in advance of any revisions to the DTD.</p>
+<div class="highlight-python"><pre>&lt;!ELEMENT NotificationRequestResult(NotificationResultHeader, NotificationResultList?)&gt;
+&lt;!ATTLIST NotificationRequestResult
+    Version CDATA "3.5"
+&gt;
+&lt;!ELEMENT NotificationResultHeader (PartnerName, PartnerRef, RequestResultCode, RequestResultText?)&gt;
+&lt;!ELEMENT PartnerName (#PCDATA)&gt;
+&lt;!ELEMENT PartnerRef (#PCDATA)&gt;
+&lt;!ELEMENT RequestResultCode (#PCDATA)&gt;
+&lt;!ELEMENT RequestResultText (#PCDATA)&gt;
+&lt;!ELEMENT NotificationResultList (NotificationResult+)&gt;
+&lt;!ELEMENT NotificationResult (NotificationResultCode, NotificationResultText?, SubscriberResult*)&gt;
+&lt;!ATTLIST NotificationResult
+    SequenceNumber CDATA #REQUIRED
+&gt;
+&lt;!ELEMENT NotificationResultCode (#PCDATA)&gt;
+&lt;!ELEMENT NotificationResultText (#PCDATA)&gt;
+&lt;!ELEMENT SubscriberResult (SubscriberNumber?, SubscriberResultCode, SubscriberResultText?, Retry, Operator?)&gt;
+&lt;!ELEMENT SubscriberNumber (#PCDATA)&gt;
+&lt;!ELEMENT SubscriberResultCode (#PCDATA)&gt;
+&lt;!ELEMENT SubscriberResultText (#PCDATA)&gt;
+&lt;!ELEMENT Retry (#PCDATA)&gt;
+&lt;!ELEMENT Operator (#PCDATA)&gt;</pre>
+</div>
+</div>
+<div class="section" id="xml-structure-notification-service">
+<span id="id3"></span><h2>XML structure: Notification Service<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-notification-service" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Notification Service</strong> provides you with the status of your Notification Request as it is processed by the mBlox platform and operator.</p>
+<p>Whether your Notification Request fails to validate at the mBlox platform or the operator successfully sends the MT message, your <a class="reference external" href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html">registered callback URL</a> will receive <strong>Notification Service</strong> XML documents with appropriate status codes that you can evaluate and process.</p>
+<p>This XML document consists of a header, providing account identification/authentication, followed by a list containing the delivery status information elements.</p>
+    <table class="codeinspector" id="codeinspector3">
+            <tbody><tr>
+                    <td>
+                            <div id="inspector">
+                                    <table>
+                                            <tbody><tr>
+                                                    <td id="number" class="last"><div class="num first">001</div><div class="num">002</div><div class="num">003</div><div class="num">004</div><div class="num">005</div><div class="num">006</div><div class="num">007</div><div class="num">008</div><div class="num">009</div><div class="num">010</div><div class="num">011</div><div class="num">012</div><div class="num">013</div><div class="num">014</div><div class="num">015</div><div class="num">016</div><div class="num">017</div><div class="num">018</div></td>
+                                                    <td id="code" class="last"><div id="3code1" class="line first required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&lt;NotificationService&nbsp;Version="2.3"&gt;</div><div style="clear:both;"></div><div id="3code2" class="line required" style="cursor: pointer;">&lt;Header&gt;</div><div style="clear:both;"></div><div id="3code3" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Partner&gt;AccountName&lt;/Partner&gt;</div><div style="clear:both;"></div><div id="3code4" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Password&gt;Password&lt;/Password&gt;</div><div style="clear:both;"></div><div id="3code5" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ServiceID&gt;1&lt;/ServiceID&gt;</div><div style="clear:both;"></div><div id="3code6" class="line required" style="cursor: pointer;">&lt;/Header&gt;</div><div style="clear:both;"></div><div id="3code7" class="line required" style="cursor: pointer;">&lt;NotificationList&gt;</div><div style="clear:both;"></div><div id="3code8" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Notification&nbsp;BatchID="xxxxxxx"&nbsp;SequenceNumber="1"&gt;</div><div style="clear:both;"></div><div id="3code9" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Subscriber&gt;</div><div style="clear:both;"></div><div id="3code10" class="line required" style="cursor: pointer; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;SubscriberNumber&gt;1xxxxxxxxxx&lt;/SubscriberNumber&gt;</div><div style="clear:both;"></div><div id="3code11" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Status&gt;acked&lt;/Status&gt;</div><div style="clear:both;"></div><div id="3code12" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TimeStamp&gt;YYYYMMDDHHmm&lt;/TimeStamp&gt;</div><div style="clear:both;"></div><div id="3code13" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgReference&gt;xxxxxxxxxxxx&lt;/MsgReference&gt;</div><div style="clear:both;"></div><div id="3code14" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Reason&gt;3&lt;/Reason&gt;</div><div style="clear:both;"></div><div id="3code15" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Subscriber&gt;</div><div style="clear:both;"></div><div id="3code16" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Notification&gt;</div><div style="clear:both;"></div><div id="3code17" class="line required" style="cursor: pointer;">&lt;/NotificationList&gt;</div><div style="clear:both;"></div><div id="3code18" class="line required" style="cursor: pointer;">&lt;/NotificationService&gt;</div><div style="clear:both;"></div></td>
+                                            </tr>
+                                    </tbody></table>
+                            </div>
+                    </td>
+                    <td>
+                            <div id="explanation" style="height: 364px;"><p>Line001:<strong> NotificationService</strong></p><hr>
+            <p>This is the root element for the Notification Service.</p>
+            <p>The current version number for the Notification Service is <strong>"2.3"</strong>.</p>
+            <p>mBlox recommends that your application ignores the version attribute when processing this XML document from the mBlox platform.</p>
+        </div>
+                    </td>
+            </tr>
+    </tbody></table>
+
+        <div id="code3_explanation1" class="source">
+            <p>This is the root element for the Notification Service.</p>
+            <p>The current version number for the Notification Service is <strong>"2.3"</strong>.</p>
+            <p>mBlox recommends that your application ignores the version attribute when processing this XML document from the mBlox platform.</p>
+        </div>
+
+        <!-- Header -->
+        <div id="code3_explanation2" class="source">
+            <p>Contains header information elements.</p>
+        </div>
+
+                    <!-- Partner -->
+        <div id="code3_explanation3" class="source">
+            <p>Your mBlox account username that you supplied in the <code>&lt;PartnerName&gt;</code> element of the Notification Request.</p>
+        </div>
+
+        <!-- Password -->
+        <div id="code3_explanation4" class="source">
+            <p>The password for your mBlox account.</p>
+        </div>
+
+        <!-- ServiceID -->
+        <div id="code3_explanation5" class="source">
+            <p>This is always set to a value of <strong>1</strong>.</p>
+        </div>
+
+        <!-- /Header -->
+        <div id="code3_explanation6" class="source">
+            <p>End of header information elements.</p>
+        </div>
+
+        <!-- NotificationList -->
+        <div id="code3_explanation7" class="source">
+            <p>This tag block contains the response to your submitted Notification Request.</p>
+            <p>Only one <code>&lt;Notification&gt;</code> element is contained in this tag block.</p>
+        </div>
+
+        <!-- Notification -->
+        <div id="code3_explanation8" class="source">
+            <p>This tag block contains the response details about your submitted Notification Request and contains only one <code>&lt;Subscriber&gt;</code> element.</p>
+            <p>The <code>BatchID</code> attribute corresponds to the same attribute value in the <code>&lt;NotificationList&gt;</code> of your Notification Request. This means that you can use it to identify the message to which this response relates.</p>
+            <p>The <code>SequenceNumber</code> attribute corresponds to the same value in the Notification Request.</p>
+        </div>
+
+        <!-- Subscriber -->
+        <div id="code3_explanation9" class="source">
+            <p>This tag block contains the delivery status information related to a single Notification Request sent to an individual subscriber.</p>
+        </div>
+
+         <!-- SubscriberNumber -->
+        <div id="code3_explanation10" class="source">
+            <p>This corresponds to the <code>&lt;SubscriberNumber&gt;</code> provided in the Notification Request.</p>
+            <p>Although this element is optional within the DTD, it will always be included.</p>
+        </div>
+
+        <!-- Status -->
+        <div id="code3_explanation11" class="source">
+            <p>This indicates the delivery status of the Notification Request. Possible values are:</p>
+            <ul>
+            <li><strong>buffered phone</strong> - Intermediate state notification that the message has not yet been delivered due to a phone related problem but is being retried.</li>
+            <li><strong>buffered smsc</strong> - Indicates that the message has not yet been delivered due to some operator-related problem but is being retried within the network.</li>
+            <li><strong>acked</strong> -Indicates that the message has been accepted by the operator.</li>
+            <li><strong>Delivered</strong> - The message was delivered.</li>
+            <li><strong>Non Delivered</strong> - See the Delivery status codes referenced below for all possible failure codes</li>
+            <li><strong>Lost Notification</strong> - mBlox cannot determine whether this message has been delivered or has failed due to lack of final delivery state information from the operator.</li>
+            </ul>
+            <p>See how these statuses relate to the delivery status codes specified in the <code>&lt;Reason&gt;</code> element and all the possible values in the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_delivery_codes.html" target="_blank">Delivery status codes</a> reference documentation.</p>
+        </div>
+
+        <!-- TimeStamp -->
+        <div id="code3_explanation12" class="source">
+            <p>The date and time the delivery receipt was received by the mBlox platform from the operator.</p>
+            <p>UTC date and time (no daylight saving adjustment) in format <strong>"YYYYMMDDHHmm"</strong>.</p>
+        </div>
+
+        <!-- MsgReference -->
+        <div id="code3_explanation13" class="source">
+            <p>An randomly generated serial code that mBlox creates and uses for a reference.</p>
+            <p>If you ever have questions regarding a specific transaction, you can provide this alphanumeric string along with your account name and timeframe to mBlox Customer Support and request internal logs on this event.</p>
+        </div>
+
+        <!-- Reason -->
+        <div id="code3_explanation14" class="source">
+            <p>If present, a numeric code indicates the reason for the Notification Request delivery status. The basic codes correspond to the value returned in the <code>&lt;Status&gt;</code> element.</p>
+            <p>Learn more about the reason codes in the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_delivery_codes.html" target="_blank">Delivery status codes</a> reference documentation.</p>
+        </div>
+
+        <!-- /Subscriber -->
+        <div id="code3_explanation15" class="source">
+            <p>End of delivery status information for a subscriber.</p>
+        </div>
+
+        <!-- /Notification -->
+        <div id="code3_explanation16" class="source">
+            <p>End of delivery status information.</p>
+        </div>
+
+        <!-- /NotificationList -->
+        <div id="code3_explanation17" class="source">
+            <p>End of response information.</p>
+        </div>
+
+        <!-- /NotificationService -->
+        <div id="code3_explanation18" class="source">
+            <p>End of notification response.</p>
+        </div>
+
+
+                    <div id="code3" class="source">
+
+&lt;NotificationService Version="2.3"&gt;|||code3_explanation1|||required!!!
+&lt;Header&gt;|||code3_explanation2|||required!!!
+    &lt;Partner&gt;AccountName&lt;/Partner&gt;|||code3_explanation3|||required!!!
+    &lt;Password&gt;Password&lt;/Password&gt;|||code3_explanation4|||required!!!
+    &lt;ServiceID&gt;1&lt;/ServiceID&gt;|||code3_explanation5|||required!!!
+&lt;/Header&gt;|||code3_explanation6|||required!!!
+
+&lt;NotificationList&gt;|||code3_explanation7|||required!!!
+    &lt;Notification BatchID="xxxxxxx" SequenceNumber="1"&gt;|||code3_explanation8|||required!!!
+
+        &lt;Subscriber&gt;|||code3_explanation9|||required!!!
+            &lt;SubscriberNumber&gt;1xxxxxxxxxx&lt;/SubscriberNumber&gt;|||code3_explanation10|||required!!!
+            &lt;Status&gt;acked&lt;/Status&gt;|||code3_explanation11|||required!!!
+
+            &lt;TimeStamp&gt;YYYYMMDDHHmm&lt;/TimeStamp&gt;|||code3_explanation12|||required!!!
+            &lt;MsgReference&gt;xxxxxxxxxxxx&lt;/MsgReference&gt;|||code3_explanation13|||required!!!
+            &lt;Reason&gt;3&lt;/Reason&gt;|||code3_explanation14|||required!!!
+        &lt;/Subscriber&gt;|||code3_explanation15|||required!!!
+
+    &lt;/Notification&gt;|||code3_explanation16|||required!!!
+&lt;/NotificationList&gt;|||code3_explanation17|||required!!!
+&lt;/NotificationService&gt;|||code3_explanation18|||required!!!</div></div>
+<div class="section" id="the-notification-service-formal-dtd">
+<h2>The Notification Service formal DTD<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#the-notification-service-formal-dtd" title="Permalink to this headline">¶</a></h2>
+<p>The following is the formal DTD for the <strong>Notification Service</strong>. mBlox will notify you in advance of any revisions to the DTD.</p>
+<div class="highlight-python"><pre>&lt;!ELEMENT NotificationService (Header, NotificationList)&gt;
+&lt;!ATTLIST NotificationService
+    Version CDATA "2.3"
+&gt;
+&lt;!ELEMENT Header (Partner, Password, ServiceID)&gt;
+&lt;!ELEMENT Partner (#PCDATA)&gt;
+&lt;!ELEMENT Password (#PCDATA)&gt;
+&lt;!ELEMENT ServiceID (#PCDATA)&gt;
+&lt;!ELEMENT NotificationList (Notification+)&gt;
+&lt;!ELEMENT Notification (Subscriber+)&gt;
+&lt;!ATTLIST Notification
+    BatchID CDATA #REQUIRED
+    SequenceNumber CDATA #REQUIRED
+&gt;
+&lt;!ELEMENT Subscriber (SubscriberNumber?, Status, TimeStamp, MsgReference, Reason? , Tags?)&gt;
+&lt;!ELEMENT SubscriberNumber (#PCDATA)&gt;
+&lt;!ELEMENT Status (#PCDATA)&gt;
+&lt;!ELEMENT TimeStamp (#PCDATA)&gt;
+&lt;!ELEMENT MsgReference (#PCDATA)&gt;
+&lt;!ELEMENT Reason (#PCDATA)&gt;
+&lt;!ELEMENT Tag (#PCDATA)&gt;
+&lt;!ATTLIST Tag
+    Name CDATA #REQUIRED
+&gt;
+&lt;!ELEMENT Tags (Tag+)&gt;</pre>
+</div>
+</div>
+<div class="section" id="xml-structure-response-service">
+<span id="id4"></span><h2>XML structure: Response service<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#xml-structure-response-service" title="Permalink to this headline">¶</a></h2>
+<p>When a subscriber sends an SMS message to your account via the operator network, the mBlox platform converts the MO message to XML and sends it to your <a class="reference external" href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html">registered callback URL</a> in a <strong>Response Service</strong> XML document.</p>
+<p>This document consists of a header, providing account identification/authentication, followed by the message being submitted to your application. Although the format of the XML supports multiple MO messages in a list, the mBlox platform will only submit one message per XML document.</p>
+    <table class="codeinspector" id="codeinspector4">
+            <tbody><tr>
+                    <td>
+                            <div id="inspector">
+                                    <table>
+                                            <tbody><tr>
+                                                    <td id="number" class="last"><div class="num first">001</div><div class="num">002</div><div class="num">003</div><div class="num">004</div><div class="num">005</div><div class="num">006</div><div class="num">007</div><div class="num">008</div><div class="num">009</div><div class="num">010</div><div class="num">011</div><div class="num">012</div><div class="num">013</div><div class="num">014</div><div class="num">015</div><div class="num">016</div><div class="num">017</div><div class="num">018</div><div class="num">019</div><div class="num">020</div></td>
+                                                    <td id="code" class="last"><div id="4code1" class="line first required" style="cursor: pointer; color: rgb(255, 255, 255); background-color: rgb(153, 153, 153);">&lt;ResponseService&nbsp;Version="2.3"&gt;</div><div style="clear:both;"></div><div id="4code2" class="line required" style="cursor: pointer;">&lt;Header&gt;</div><div style="clear:both;"></div><div id="4code3" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Partner&gt;AccountName&lt;/Partner&gt;</div><div style="clear:both;"></div><div id="4code4" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Password&gt;Password&lt;/Password&gt;</div><div style="clear:both;"></div><div id="4code5" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ServiceID&gt;1&lt;/ServiceID&gt;</div><div style="clear:both;"></div><div id="4code6" class="line required" style="cursor: pointer;">&lt;/Header&gt;</div><div style="clear:both;"></div><div id="4code7" class="line required" style="cursor: pointer;">&lt;ResponseList&gt;</div><div style="clear:both;"></div><div id="4code8" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;Response&nbsp;SequenceNumber="1"&nbsp;Type="SMS"&nbsp;Format="Text"&gt;</div><div style="clear:both;"></div><div id="4code9" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;TransactionID&gt;xxxxxxxxxxxx&lt;/TransactionID&gt;</div><div style="clear:both;"></div><div id="4code10" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;OriginatingNumber&gt;1xxxxxxxxxx&lt;/OriginatingNumber&gt;</div><div style="clear:both;"></div><div id="4code11" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Time&gt;YYYYMMDDHHmm&lt;/Time&gt;</div><div style="clear:both;"></div><div id="4code12" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Data&gt;Message&lt;/Data&gt;</div><div style="clear:both;"></div><div id="4code13" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Deliverer&gt;xxxx&lt;/Deliverer&gt;</div><div style="clear:both;"></div><div id="4code14" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Destination&gt;xxxxx&lt;/Destination&gt;</div><div style="clear:both;"></div><div id="4code15" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Operator&gt;xxxxx&lt;/Operator&gt;</div><div style="clear:both;"></div><div id="4code16" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Tariff&gt;stdrt&lt;/Tariff&gt;&nbsp;</div><div style="clear:both;"></div><div id="4code17" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgReference&gt;xxxxxxxxxxxx&lt;/MsgReference&gt;</div><div style="clear:both;"></div><div id="4code18" class="line required" style="cursor: pointer;">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Response&gt;</div><div style="clear:both;"></div><div id="4code19" class="line required" style="cursor: pointer;">&lt;/ResponseList&gt;</div><div style="clear:both;"></div><div id="4code20" class="line required" style="cursor: pointer;">&lt;/ResponseService&gt;</div><div style="clear:both;"></div></td>
+                                            </tr>
+                                    </tbody></table>
+                            </div>
+                    </td>
+                    <td>
+                            <div id="explanation" style="height: 406px;"><p>Line001:<strong> ResponseService</strong></p><hr>
+            <p>This is the root element for the Response Service.</p>
+            <p>The current version number for the Response Service is <strong>"2.3"</strong>.</p>
+            <p>mBlox recommends that your application ignores the version attribute when processing this XML document from the mBlox platform.</p>
+        </div>
+                    </td>
+            </tr>
+    </tbody></table>
+
+       <!-- ResponseService -->
+        <div id="code4_explanation1" class="source">
+            <p>This is the root element for the Response Service.</p>
+            <p>The current version number for the Response Service is <strong>"2.3"</strong>.</p>
+            <p>mBlox recommends that your application ignores the version attribute when processing this XML document from the mBlox platform.</p>
+        </div>
+
+        <!-- Header -->
+        <div id="code4_explanation2" class="source">
+            <p>Contains header information elements.</p>
+        </div>
+
+                    <!-- Partner -->
+        <div id="code4_explanation3" class="source">
+            <p>Your mBlox account username.</p>
+        </div>
+
+        <!-- Password -->
+        <div id="code4_explanation4" class="source">
+            <p>The password for your mBlox account.</p>
+        </div>
+
+        <!-- ServiceID -->
+        <div id="code4_explanation5" class="source">
+            <p>This is always set to a value of <strong>1</strong>.</p>
+        </div>
+
+        <!-- /Header -->
+        <div id="code4_explanation6" class="source">
+            <p>End of header information elements.</p>
+        </div>
+
+        <!-- ResponseList -->
+        <div id="code4_explanation7" class="source">
+                    <p>The mBlox platform will only submit one MO message per XML document to your application, so this tag block contains only one <code>&lt;Response&gt;</code> element. </p>
+        </div>
+
+        <!-- Response -->
+        <div id="code4_explanation8" class="source">
+            <p>This tag block contains the data associated with a single MO message.</p>
+            <p>The <code>SequenceNumber</code> attribute always has a value of <strong>1</strong> since only one message is handled at a time in this XML response.</p>
+            <p>The <code>Type</code> attribute always has a value of <strong>SMS</strong>.</p>
+            <p>The <code>Format</code> attribute specifies the format of the <code>&lt;Data&gt;</code> element, which contains the MO message. Its values are:</p>
+            <ul>
+            <li>Text (default)</li>
+            <li>Binary</li>
+            <li>Unicode</li>
+            <li>lmode</li>
+            </ul>
+            <p>See the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_char_sets.html" target="_blank">Character Sets and Encoding</a> documentation for information on the supported character sets and encoding.
+        </p></div>
+
+        <!-- TransactionID -->
+        <div id="code4_explanation9" class="source">
+            <p>Contains an internal mBlox sequence number for the MO message that is a unique identifier to reference this specific transaction.</p>
+        </div>
+
+         <!-- OriginatingNumber -->
+        <div id="code4_explanation10" class="source">
+            <p>The originating subscriber's phone number as a numeric string, including country code (Ex: 447900000000).</p>
+        </div>
+
+        <!-- Time -->
+        <div id="code4_explanation11" class="source">
+            <p>The date and time the MO message was sent, if supplied by the operator network. If not supplied by the operator network, this will be the UTC time and date when the message was received by the mBlox platform.</p>
+            <p>The format is a numeric string specified as "YYYYMMDDHHmm".</p>
+        </div>
+
+        <!-- Data -->
+        <div id="code4_explanation12" class="source">
+            <p>Body of the message encoded as specified in the <code>Format</code> attribute of the <code>&lt;Response&gt;</code> element.</p>
+            <p>Characters will be passed transparently by the mBlox platform in the same encoding as originated by the operator network. </p>
+        </div>
+
+        <!-- Deliverer -->
+        <div id="code4_explanation13" class="source">
+            <p>Contains a value identifying the operator from which the message has been received.</p>
+        </div>
+
+        <!-- Destination -->
+        <div id="code4_explanation14" class="source">
+            <p>Contains the destination number to which the MO message has been sent.</p>
+            <p>The value will be either in network short code or a phone number with country code (Ex: 447900000000).</p>
+        </div>
+
+        <!-- Operator -->
+        <div id="code4_explanation15" class="source">
+            <p>If present, contains a numeric identifier, the <b><i>OperatorID</i></b>, uniquely identifying the operator to which the message has been submitted.</p>
+            <p>This element will not be present if the <a href="http://109.74.11.69/developers/docs/sms/sms_xml_account_info.html" target="_blank">acknowledgement scheme</a> is set to Immediate Return.</p>
+            <p>See the <a href="http://109.74.11.69/developers/docs/sms/sms_operators.html" target="_blank">Operator IDs and names</a> reference documentation.</p>
+        </div>
+
+        <!-- Tariff -->
+        <div id="code4_explanation16" class="source">
+            <p>Only applicable to premium MO messages. The value of <strong>"stdrt"</strong> means that no additional charge has been added.</p>
+        </div>
+
+        <!-- MsgReference -->
+        <div id="code4_explanation17" class="source">
+            <p>If present, contains a reference from the operator network for the MO message.</p>
+        </div>
+
+        <!-- /Response -->
+        <div id="code4_explanation18" class="source">
+                            <p>End of response detail information.</p>
+        </div>
+
+        <!-- /ResponseList -->
+        <div id="code4_explanation19" class="source">
+                            <p>End of response message.</p>
+        </div>
+
+        <!-- /ResponseService -->
+        <div id="code4_explanation20" class="source">
+                            <p>End of Response Service.</p>
+        </div>
+
+
+                    <div id="code4" class="source">
+
+&lt;ResponseService Version="2.3"&gt;|||code4_explanation1|||required!!!
+&lt;Header&gt;|||code4_explanation2|||required!!!
+    &lt;Partner&gt;AccountName&lt;/Partner&gt;|||code4_explanation3|||required!!!
+    &lt;Password&gt;Password&lt;/Password&gt;|||code4_explanation4|||required!!!
+    &lt;ServiceID&gt;1&lt;/ServiceID&gt;|||code4_explanation5|||required!!!
+&lt;/Header&gt;|||code4_explanation6|||required!!!
+
+&lt;ResponseList&gt;|||code4_explanation7|||required!!!
+    &lt;Response SequenceNumber="1" Type="SMS" Format="Text"&gt;|||code4_explanation8|||required!!!
+
+        &lt;TransactionID&gt;xxxxxxxxxxxx&lt;/TransactionID&gt;|||code4_explanation9|||required!!!
+        &lt;OriginatingNumber&gt;1xxxxxxxxxx&lt;/OriginatingNumber&gt;|||code4_explanation10|||required!!!
+
+        &lt;Time&gt;YYYYMMDDHHmm&lt;/Time&gt;|||code4_explanation11|||required!!!
+        &lt;Data&gt;Message&lt;/Data&gt;|||code4_explanation12|||required!!!
+        &lt;Deliverer&gt;xxxx&lt;/Deliverer&gt;|||code4_explanation13|||required!!!
+        &lt;Destination&gt;xxxxx&lt;/Destination&gt;|||code4_explanation14|||required!!!
+        &lt;Operator&gt;xxxxx&lt;/Operator&gt;|||code4_explanation15|||required!!!
+        &lt;Tariff&gt;stdrt&lt;/Tariff&gt; |||code4_explanation16|||required!!!
+        &lt;MsgReference&gt;xxxxxxxxxxxx&lt;/MsgReference&gt;|||code4_explanation17|||required!!!
+
+    &lt;/Response&gt;|||code4_explanation18|||required!!!
+&lt;/ResponseList&gt;|||code4_explanation19|||required!!!
+&lt;/ResponseService&gt;|||code4_explanation20|||required!!!</div></div>
+<div class="section" id="the-response-service-formal-dtd">
+<h2>The Response Service formal DTD<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#the-response-service-formal-dtd" title="Permalink to this headline">¶</a></h2>
+<p>The following is the formal DTD for the <strong>Response Service</strong>. mBlox will notify you in advance of any revisions to the DTD.</p>
+<div class="highlight-python"><pre>&lt;!ELEMENT ResponseService (Header, ResponseList)&gt;
+&lt;!ATTLIST ResponseService
+    Version CDATA "2.3"
+&gt;
+&lt;!ELEMENT Header (Partner, Password, ServiceID)&gt;
+&lt;!ELEMENT Partner (#PCDATA)&gt;
+&lt;!ELEMENT Password (#PCDATA)&gt;
+&lt;!ELEMENT ServiceID (#PCDATA)&gt;
+&lt;!ELEMENT ResponseList (Response+)&gt;
+&lt;!ELEMENT Response (TransactionID, OriginatingNumber?, Time, Data, Deliverer, Destination, Operator?, Tariff?, Udh?, MsgReference?, SessionId?, Tags?)&gt;
+&lt;!ATTLIST Response
+    SequenceNumber CDATA #REQUIRED
+    Type CDATA "SMS"
+    Format (Text | Unicode | Binary | Imode) #IMPLIED
+&gt;
+&lt;!ELEMENT TransactionID (#PCDATA)&gt;
+&lt;!ELEMENT OriginatingNumber (#PCDATA)&gt;
+&lt;!ELEMENT Time (#PCDATA)&gt;
+&lt;!ELEMENT Data (#PCDATA)&gt;
+&lt;!ELEMENT Deliverer (#PCDATA)&gt;
+&lt;!ELEMENT Destination (#PCDATA)&gt;
+&lt;!ELEMENT Operator (#PCDATA)&gt;
+&lt;!ELEMENT Tariff (#PCDATA)&gt;
+&lt;!ELEMENT Udh (#PCDATA)&gt;
+&lt;!ELEMENT MsgReference (#PCDATA)&gt;
+&lt;!ELEMENT SessionId (#PCDATA)&gt;
+&lt;!ELEMENT Tag (#PCDATA)&gt;
+&lt;!ATTLIST Tag
+    Name CDATA #REQUIRED
+&gt;
+&lt;!ELEMENT Tags (Tag+)&gt;</pre>
+</div>
+</div>
+<div class="section" id="next-step">
+<h2>Next step<a class="headerlink" href="http://109.74.11.69/developers/docs/sms/sms_xml_structure.html#next-step" title="Permalink to this headline">¶</a></h2>
+<p>Next, explore important information about building your application in the <a class="reference external" href="http://109.74.11.69/developers/docs/sms/sms_xml_connection.html">Application connection management</a> and <a class="reference external" href="http://109.74.11.69/developers/docs/sms/sms_xml_app_design.html">Application design recommendations</a> documents.</p>
+</div>
+</div>
+
+			
+                <br>
+                <br>
+                <h2>Comments</h2>
+                <div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./XML structure — mBlox documentation_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 589px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'mblox'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the &lt;a href="http://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+                
+              </div>
+            </div>
+            </div>
+
+        <div class="clearer"></div>
+    </div>
+
+    
+	<script type="text/javascript" charset="utf-8" src="./XML structure — mBlox documentation_files/mbloxdocs.js"></script>
+	<script type="text/javascript" charset="utf-8" src="./XML structure — mBlox documentation_files/codeinspector.js"></script>	
+	<script type="text/javascript" charset="utf-8" src="./XML structure — mBlox documentation_files/bootstrap.min.js"></script>	
+	<script>$('#toc > ul').affix();</script>
+
+  
+</div></body></html>
