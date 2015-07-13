@@ -72,7 +72,7 @@ module Rails
         if self.multiparts?
           raise ArgumentError, "#{@message} too long and multipart disabled" unless @config.multipart_enabled?
 
-          messages = @message.scan(/.{1,#{self.chunck_size}}/)
+          messages = @message.scan(/.{1,#{self.chunck_size}}/m)
         end
 
         messages.each_with_index do |message, index|
